@@ -252,6 +252,7 @@ function renderStory() {
   return;
 }
 
+
   const phase = appData.phases.find(p => p.id === m.phase);
   const diffMap = { mudah:{label:"Mudah",cls:"diff-mudah"}, sedang:{label:"Sedang",cls:"diff-sedang"}, sulit:{label:"Sulit",cls:"diff-sulit"} };
   const diff = diffMap[m.difficulty] || diffMap.mudah;
@@ -346,8 +347,13 @@ function renderDecision() {
   if (!optEl) return;
 
   const icons = ["directions_run","waving_hand","rowing","lightbulb","explore"];
-  optEl.innerHTML = dec.options.map((opt, i) => `
-    <button onclick="chooseDecision(${i})" id="dec-opt-${i}" class="option-card">
+  
+  // Membungkus opsi dengan index aslinya, lalu diacak
+  let shuffledDecisions = dec.options.map((opt, idx) => ({ ...opt, originalIdx: idx }));
+  shuffledDecisions = shuffleArray(shuffledDecisions);
+
+  optEl.innerHTML = shuffledDecisions.map((opt, i) => `
+    <button onclick="chooseDecision(${opt.originalIdx})" id="dec-opt-${opt.originalIdx}" class="option-card">
       <div style="width:44px;height:44px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
         <span class="material-symbols-outlined" style="font-size:20px;color:var(--muted)">${icons[i] || 'circle'}</span>
       </div>
@@ -429,9 +435,8 @@ function renderQuiz() {
   const optEl = document.getElementById("quiz-options");
   if (!optEl) return;
 
-  // Shuffle options for retry
-  let opts = [...q.options];
-  if (quizRetry) opts = shuffleArray(opts);
+  // Memaksa opsi selalu diacak setiap kali kuis dimuat, bukan hanya saat retry
+  let opts = shuffleArray([...q.options]);
 
   optEl.innerHTML = opts.map((opt, i) => `
     <button onclick="checkAnswer('${escStr(opt)}')" id="qa-${i}" class="option-card">
@@ -542,15 +547,50 @@ function renderReflection() {
   const m = appData.miracles[currentIdx];
   const r = m.reflection;
 
-  // 🔥 PERBAIKAN: Gunakan m.reflection.points, bukan m.points
   set("ref-points", `+${m.reflection.points} Poin`);
   set("ref-badge", m.reward);
   set("ref-closing", m.episode_closing);
   set("ref-prompt", r.prompt);
 
   const inputEl = document.getElementById("ref-input");
-  if (inputEl) inputEl.value = user.reflections[m.id] || "";
-  if (inputEl) inputEl.placeholder = r.starter || "Mulai dengan menulis...";
+  const saveBtn = document.getElementById("btn-save-reflection");
+  const noteEl = document.getElementById("ref-char-note"); // Ambil elemen catatan kita
+
+  if (inputEl) {
+    // Set teks lama jika sudah pernah diisi
+    inputEl.value = user.reflections[m.id] || "";
+    inputEl.placeholder = r.starter || "Mulai dengan menulis...";
+    
+    // Fungsi untuk mengecek dan mengupdate tampilan
+    const checkLength = () => {
+      const len = inputEl.value.trim().length;
+      
+      // Update status tombol
+      if (saveBtn) saveBtn.disabled = len < 10;
+      
+      // Update teks catatan
+      if (noteEl) {
+        if (len === 0) {
+          noteEl.textContent = "Minimal 10 karakter untuk menyimpan.";
+          noteEl.style.color = "var(--muted)"; // Warna abu-abu bawaan
+        } else if (len < 10) {
+          noteEl.textContent = `Ketik ${10 - len} karakter lagi...`;
+          noteEl.style.color = "var(--accent)"; // Warna kuning/orange peringatan
+        } else {
+          noteEl.textContent = "✓ Teks sudah cukup, silakan simpan!";
+          noteEl.style.color = "var(--success)"; // Warna hijau sukses
+        }
+      }
+    };
+
+    // Panggil saat halaman pertama kali dimuat
+    checkLength();
+
+    // Panggil setiap kali user mengetik sesuatu
+    inputEl.oninput = () => {
+      checkLength();
+    };
+  }
 
   const fbEl = document.getElementById("ref-feedback");
   if (fbEl) fbEl.classList.add("hidden");
@@ -756,4 +796,45 @@ function completeMiracle(m) {
 
   checkLevelUp(); // 🔥 penting
   saveUser();
+}
+
+function speakText(text) {
+  // Hentikan suara sebelumnya
+  speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  // Bahasa Indonesia
+  utterance.lang = "id-ID";
+
+  // Pengaturan suara
+  utterance.rate = 0.95;   // kecepatan
+  utterance.pitch = 1;     // nada
+  utterance.volume = 1;    // volume
+
+  speechSynthesis.speak(utterance);
+}
+
+function playStoryAudio() {
+  const title = document.getElementById("story-title")?.innerText || "";
+  const subtitle = document.getElementById("story-subtitle")?.innerText || "";
+  const verse = document.getElementById("story-verse")?.innerText || "";
+  const story = document.getElementById("story-text")?.innerText || "";
+  const makna = document.getElementById("story-makna")?.innerText || "";
+
+  const fullText = `
+  ${title}...
+
+  ${subtitle}...
+
+  Diambil dari ${verse}...
+
+  ${story}...
+
+  Makna inti dari peristiwa ini adalah...
+
+  ${makna}
+  `;
+
+  speakText(fullText);
 }
