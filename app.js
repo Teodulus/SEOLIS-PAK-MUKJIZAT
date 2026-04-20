@@ -838,3 +838,6 @@ function playStoryAudio() {
 
   speakText(fullText);
 }
+function stopAudio() {
+  speechSynthesis.cancel();
+}
