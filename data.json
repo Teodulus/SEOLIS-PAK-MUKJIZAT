@@ -1,4 +1,11 @@
 {
+
+"global_objectives": [
+    "Memahami makna mukjizat Yesus dalam Injil",
+    "Mengaitkan nilai iman dengan kehidupan sehari-hari",
+    "Mengembangkan refleksi spiritual melalui cerita interaktif"
+  ],
+
   "phases": [
     {
       "id": "kana",
@@ -30,6 +37,10 @@
     { "id": "murid", "label": "Murid", "minPoints": 150, "icon": "school" },
     { "id": "rasul", "label": "Rasul", "minPoints": 350, "icon": "military_tech" }
   ],
+
+
+
+  
   "miracles": [
     {
       "id": 1,
@@ -1025,4 +1036,7 @@
     
     }
   ]
+
+  
 }
+
