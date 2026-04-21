@@ -18,6 +18,7 @@ let currentIdx = 0;
 let quizAnswered = false;
 let quizRetry = false;
 let currentStep = "story"; // 🔥 TAMBAHKAN DI SINI
+
 let tts = {
   utterance: null,
   isSpeaking: false,
@@ -744,12 +745,32 @@ function updateName() {
   updateProfile();
 }
 
-function resetProgress() {
-  if (!confirm("Reset semua progresmu? Tindakan ini tidak bisa dibatalkan.")) return;
-  user = { name: user.name, points: 0, level: 1, completed: [], badges: [], reflections: {}, quizAttempts: {} };
-  saveUser();
-  initApp();
-  showScreen("screen-home");
+function resetAll() {
+  const confirmReset = confirm("Yakin mau reset semua progress?");
+  if (!confirmReset) return;
+
+  // hapus semua data
+  localStorage.removeItem("mj_user");
+
+  // reset state
+  user = {
+    name: "Peziarah",
+    points: 0,
+    level: 1,
+    completed: [],
+    badges: [],
+    reflections: {},
+    quizAttempts: {}
+  };
+
+  // reset index
+  currentIdx = 0;
+
+  // stop audio kalau ada
+  stopTTS();
+
+  // balik ke onboarding
+  showScreen("screen-onboarding");
 }
 
 // ─── HELPERS ──────────────────────────────────────────────────
