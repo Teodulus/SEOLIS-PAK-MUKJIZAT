@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Miracle Journey – Sacred Wonders</title>
+<title>So Miracle – Sacred Wonders</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -474,12 +474,12 @@ body {
 <!-- ══════════════════════════════════════════
      ONBOARDING
 ══════════════════════════════════════════ -->
-<div id="screen-onboarding" class="screen active items-center justify-end" style="background: linear-gradient(160deg, #0c1b4d 0%, #1a56db 50%, #7c3aed 100%);">
-  <div class="w-full px-6 pb-10 pt-4 text-center flex flex-col items-center gap-4" style="max-width:440px;margin:auto;">
+<div id="screen-onboarding" class="screen active items-center justify-center" style="background: linear-gradient(160deg, #0c1b4d 0%, #1a56db 50%, #7c3aed 100%);">
+  <div class="w-full px-6 pb-10 pt-4 text-center flex flex-col items-center gap-1" style="max-width:440px;margin:auto;">
     <div class="pop" style="animation-delay:0.1s">
-      <div style="font-size:72px;margin-bottom:8px;">✨</div>
-      <h1 class="text-white font-sans text-3xl font-extrabold leading-tight mb-2">Miracle Journey</h1>
-<p class="text-xs text-white/70 italic mt-2">
+      <img src="images/logo.png" alt="So Miracle Logo"
+  style="width:360px; margin:0 auto 2px auto; display:block;">
+<p class="text-xs text-white/70 italic mt-1">
   Sebelum memulai perjalanan, pahami tujuan pembelajaran berikut:
 </p>
 
@@ -492,7 +492,8 @@ body {
 </div>
 
 <div id="learning-objectives" class="text-left text-white/90 text-sm mt-3"></div>
-      <p class="text-white/75 text-sm leading-relaxed mb-2">Selamat datang di <em>Sacred Wonders</em> —<br/>Sebuah perjalanan mengenal mukjizat Yesus dan menemukan maknanya dalam hidupmu.</p>
+      <p class="text-white/75 text-sm leading-relaxed mb-6">Selamat datang di <em>Sacred Wonders</em> —<br/>Sebuah perjalanan mengenal mukjizat Yesus dan menemukan maknanya dalam hidupmu.</p>
+    <p></p>
     </div>
 
     <div class="w-full fade-up d2" style="background:rgba(255,255,255,0.1);backdrop-filter:blur(16px);border-radius:20px;padding:20px;border:1px solid rgba(255,255,255,0.15);">
@@ -1008,9 +1009,9 @@ body {
 
     <!-- Reset -->
     <div class="fade-up d3">
-      <button onclick="resetProgress()" style="width:100%;padding:12px;border:2px solid var(--error);border-radius:12px;background:transparent;color:var(--error);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all 0.2s;">
-        Reset Semua Progress
-      </button>
+<button onclick="resetAll()" class="btn-outline" style="border-color:red; color:red;">
+  Reset Semua Progress
+</button>
     </div>
   </main>
   <nav class="bottom-nav fixed bottom-0 left-0 right-0 z-40 flex justify-around items-center px-3 pb-5 pt-2 fixed-full">
