@@ -251,12 +251,15 @@ function startMiracle(idx) {
 // ─── STORY ────────────────────────────────────────────────────
 function renderStory() {
   const m = appData.miracles[currentIdx];
-  if (!m) return;
-
+if (!m) {
+  alert("Data tidak ditemukan");
+  return;
+}
   if (!appData || !appData.miracles[currentIdx]) {
   alert("Data tidak ditemukan");
   return;
 }
+renderDots(0);
 
 
   const phase = appData.phases.find(p => p.id === m.phase);
@@ -330,6 +333,8 @@ function renderStory() {
   }
 }
 
+
+
 function goToDecision() {
   renderDecision();
   showScreen("screen-decision");
@@ -353,7 +358,8 @@ function renderDecision() {
   if (!optEl) return;
 
   const icons = ["directions_run","waving_hand","rowing","lightbulb","explore"];
-  
+
+
   // Membungkus opsi dengan index aslinya, lalu diacak
   let shuffledDecisions = dec.options.map((opt, idx) => ({ ...opt, originalIdx: idx }));
   shuffledDecisions = shuffleArray(shuffledDecisions);
@@ -368,6 +374,8 @@ function renderDecision() {
       </div>
     </button>
   `).join("");
+
+    renderDots(1);
 }
 
 function chooseDecision(idx) {
@@ -444,12 +452,17 @@ function renderQuiz() {
   // Memaksa opsi selalu diacak setiap kali kuis dimuat, bukan hanya saat retry
   let opts = shuffleArray([...q.options]);
 
+if (quizAnswered) return;
+quizAnswered = true;
+
   optEl.innerHTML = opts.map((opt, i) => `
     <button onclick="checkAnswer('${escStr(opt)}')" id="qa-${i}" class="option-card">
       <div style="width:32px;height:32px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;color:var(--muted)">${String.fromCharCode(65+i)}</div>
       <p class="font-sans font-semibold text-sm leading-snug" style="color:var(--on-bg)">${opt}</p>
     </button>
   `).join("");
+
+  renderDots(2);
 }
 
 function checkAnswer(selected) {
@@ -586,6 +599,9 @@ function renderReflection() {
           noteEl.textContent = "✓ Teks sudah cukup, silakan simpan!";
           noteEl.style.color = "var(--success)"; // Warna hijau sukses
         }
+
+
+        renderDots(3);
       }
     };
 
@@ -608,7 +624,12 @@ function saveReflection() {
   const text = inputEl ? inputEl.value.trim() : "";
 
   user.reflections[m.id] = text;
-
+function showSummary(m) {
+  alert(`Hari ini kamu belajar:
+- ${m.makna_inti}
+- Menerapkan iman dalam situasi nyata
+- Merefleksikan pengalaman pribadi`);
+}
   // Feedback message
   const fbEl = document.getElementById("ref-feedback");
   if (fbEl && text.length > 10) {
@@ -792,14 +813,6 @@ function shuffleArray(arr) {
   return a;
 }
 
-function updateDots(activeIdx) {
-  const dotsEl = document.getElementById("story-dots");
-  if (!dotsEl) return;
-  dotsEl.querySelectorAll("div").forEach((d, i) => {
-    d.style.width = i === activeIdx ? "28px" : "8px";
-    d.style.background = i === activeIdx ? "var(--primary)" : "var(--surface3)";
-  });
-}
 
 function checkLevelUp() {
   const nextLevel = user.level + 1;
@@ -1049,4 +1062,41 @@ function getFullStoryText(m) {
   Makna inti.
   ${m.makna_inti}
   `;
+}
+
+user.quizAttempts[m.id] = (user.quizAttempts[m.id] || 0) + 1;
+if (user.quizAttempts[m.id] >= 2) {
+  tampilkanJawabanBenar();
+}
+
+function renderDots(stepIndex) {
+  const labels = ["Cerita","Pilihan","Kuis","Refleksi"];
+  const el = document.getElementById("story-dots");
+  if (!el) return;
+
+  el.innerHTML = labels.map((_, i) => `
+    <div style="
+      width:${i===stepIndex?'28px':'8px'};
+      height:8px;
+      border-radius:99px;
+      background:${i===stepIndex?'var(--primary)':'var(--surface3)'};
+      transition:all 0.3s;
+    "></div>
+  `).join("");
+}
+
+user.quizAttempts[m.id] = (user.quizAttempts[m.id] || 0) + 1;
+
+if (user.quizAttempts[m.id] >= 2) {
+  tampilkanJawabanBenar();
+}
+
+const msg = isCorrect
+  ? "Pilihanmu menunjukkan pemahaman 👍"
+  : "Coba renungkan lagi makna cerita ini...";
+
+set("quiz-feedback-text", msg);
+
+if (!isCorrect && !quizRetry) {
+  setTimeout(() => retryQuiz(), 1200);
 }
