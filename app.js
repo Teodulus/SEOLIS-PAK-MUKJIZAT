@@ -18,7 +18,11 @@ let currentIdx = 0;
 let quizAnswered = false;
 let quizRetry = false;
 let currentStep = "story"; // 🔥 TAMBAHKAN DI SINI
-
+let tts = {
+  utterance: null,
+  isSpeaking: false,
+  isPaused: false
+};
 // ─── INIT ─────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(localStorage.getItem("mj_theme") || "light");
@@ -96,6 +100,7 @@ function completeOnboarding() {
 
 // ─── SCREEN NAVIGATION ────────────────────────────────────────
 function showScreen(id) {
+  stopTTS(); // 🔥 ini wajib
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   const el = document.getElementById(id);
   if (el) { el.classList.add("active"); el.scrollTop = 0; window.scrollTo(0, 0); }
@@ -840,4 +845,187 @@ function playStoryAudio() {
 }
 function stopAudio() {
   speechSynthesis.cancel();
+}
+
+
+
+function speakText(text) {
+  stopTTS(); // penting!
+
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "id-ID";
+  u.rate = 0.95;
+  u.pitch = 1;
+
+  u.onstart = () => {
+    tts.isSpeaking = true;
+  };
+
+  u.onend = () => {
+    tts.isSpeaking = false;
+  };
+
+  speechSynthesis.speak(u);
+  tts.utterance = u;
+}
+
+function pauseTTS() {
+  if (speechSynthesis.speaking && !speechSynthesis.paused) {
+    speechSynthesis.pause();
+    tts.isPaused = true;
+  }
+}
+
+function resumeTTS() {
+  if (speechSynthesis.paused) {
+    speechSynthesis.resume();
+    tts.isPaused = false;
+  }
+}
+
+function stopTTS() {
+  speechSynthesis.cancel();
+  tts.isSpeaking = false;
+}
+
+function toggleTTS() {
+  const m = appData.miracles[currentIdx];
+
+  const text = getFullStoryText(m); // 🔥 INI KUNCI
+
+  if (!speechSynthesis.speaking) {
+    playTTS(text);
+  } else if (speechSynthesis.paused) {
+    speechSynthesis.resume();
+  } else {
+    speechSynthesis.pause();
+  }
+}
+
+function playTTS(text) {
+  stopTTS();
+
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "id-ID";
+  u.rate = 0.95;
+
+  u.onstart = () => {
+    tts.isSpeaking = true;
+    tts.isPaused = false;
+    updateTTSButton();
+  };
+
+  u.onend = () => {
+    tts.isSpeaking = false;
+    tts.isPaused = false;
+    updateTTSButton();
+  };
+
+  speechSynthesis.speak(u);
+  tts.utterance = u;
+}
+
+function pauseTTS() {
+  if (speechSynthesis.speaking && !speechSynthesis.paused) {
+    speechSynthesis.pause();
+    tts.isPaused = true;
+    updateTTSButton();
+  }
+}
+
+function resumeTTS() {
+  if (speechSynthesis.paused) {
+    speechSynthesis.resume();
+    tts.isPaused = false;
+    updateTTSButton();
+  }
+}
+
+function stopTTS() {
+  speechSynthesis.cancel();
+  tts.isSpeaking = false;
+  tts.isPaused = false;
+  updateTTSButton();
+}
+
+function toggleTTS() {
+  const m = appData.miracles[currentIdx];
+  {
+  return `
+    ${m.title}.
+    ${m.subtitle}.
+    
+    ${m.story_parts.join(" ")}
+    
+    Makna inti:
+    ${m.makna_inti}
+  `;
+}
+
+  if (!tts.isSpeaking) {
+    playTTS(text);
+  } else if (tts.isPaused) {
+    resumeTTS();
+  } else {
+    pauseTTS();
+  }
+}
+
+u.onstart = () => {
+  tts.isSpeaking = true;
+  tts.isPaused = false;
+  updateTTSButton(); // 🔥 ini penting
+};
+
+u.onend = () => {
+  tts.isSpeaking = false;
+  tts.isPaused = false;
+  updateTTSButton(); // 🔥 ini penting
+};
+
+function toggleTTS() {
+  const m = appData.miracles[currentIdx];
+const text = getFullStoryText(m);
+  console.log(getFullStoryText(m));
+
+  if (!tts.isSpeaking) {
+    playTTS(text);        // ▶️ PLAY
+  } else if (tts.isPaused) {
+    resumeTTS();          // ▶️ RESUME
+  } else {
+    pauseTTS();           // ⏸️ PAUSE
+  }
+}
+
+function updateTTSButton() {
+  const btn = document.getElementById("btn-tts");
+  if (!btn) return;
+
+  if (!tts.isSpeaking) {
+    btn.innerText = "▶️ Dengarkan Cerita";
+  } else if (tts.isPaused) {
+    btn.innerText = "▶️ Lanjutkan";
+  } else {
+    btn.innerText = "⏸️ Pause";
+  }
+}
+
+function getFullStoryText(m) {
+  return [
+    m.title,
+    m.subtitle,
+    ...m.story_parts,
+    "Makna inti",
+    m.makna_inti
+  ].join(". ");
+}
+
+function getFullStoryText(m) {
+  return `
+  ${m.title}.
+  ${m.subtitle}.
+  ${m.story_parts.join(" ")}.
+  Makna inti.
+  ${m.makna_inti}
+  `;
 }
