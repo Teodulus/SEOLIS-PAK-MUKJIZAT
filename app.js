@@ -63,7 +63,49 @@ function initApp() {
   updateProfile();
 }
 
-// ─── PERSISTENCE ──────────────────────────────────────────────
+// ─── DAILY REFLECTION ────────────────────────────────────────
+const DAILY_REFLECTIONS = [
+  { text: "Akulah jalan, kebenaran, dan hidup. Tidak ada seorang pun yang datang kepada Bapa tanpa melalui Aku.", author: "Yesus (Yohanes 14:6)" },
+  { text: "Mintalah, maka akan diberikan kepadamu. Carilah, maka kamu akan mendapat. Ketuklah, maka pintu akan dibukakan bagimu.", author: "Yesus (Matius 7:7)" },
+  { text: "Sebab Allah begitu mengasihi dunia ini, sehingga Ia telah mengaruniakan Anak-Nya yang tunggal.", author: "Yesus (Yohanes 3:16)" },
+  { text: "Segala perkara dapat kutanggung di dalam Dia yang memberi kekuatan kepadaku.", author: "Paulus (Filipi 4:13)" },
+  { text: "Kasih itu sabar, kasih itu murah hati, tidak memegahkan diri, tidak sombong.", author: "Paulus (1 Korintus 13:4)" },
+  { text: "Jangan kamu kuatir tentang apapun juga, tetapi nyatakanlah dalam segala hal keinginanmu kepada Allah.", author: "Paulus (Filipi 4:6)" },
+  { text: "Tuhan adalah gembalaku, takkan kekurangan aku.", author: "Daud (Mazmur 23:1)" },
+  { text: "Aku bersyukur kepada-Mu sebab Engkau telah membuat aku dengan dahsyat dan ajaib.", author: "Daud (Mazmur 139:14)" },
+  { text: "Berbahagialah orang yang miskin di hadapan Allah, karena merekalah yang empunya Kerajaan Sorga.", author: "Yesus (Matius 5:3)" },
+  { text: "Iman tanpa perbuatan pada hakikatnya adalah mati.", author: "Yakobus (Yakobus 2:26)" },
+  { text: "Jika Allah di pihak kita, siapakah yang akan melawan kita?", author: "Paulus (Roma 8:31)" },
+  { text: "Kasihilah sesamamu manusia seperti dirimu sendiri.", author: "Yesus (Markus 12:31)" },
+  { text: "Anda tidak pernah terlalu tua untuk menetapkan tujuan baru atau memimpikan mimpi baru.", author: "C.S. Lewis" },
+  { text: "Iman adalah daya yang membawa kita melampaui batas akal dan membuka cakrawala yang tak terbatas.", author: "C.S. Lewis" },
+  { text: "Jika kamu menghakimi orang, kamu tidak punya waktu untuk mencintai mereka.", author: "Mother Teresa" },
+  { text: "Bukan seberapa banyak yang kamu lakukan, tetapi seberapa besar cinta yang kamu curahkan dalam setiap perbuatan.", author: "Mother Teresa" },
+  { text: "Kegelapan tidak dapat mengusir kegelapan; hanya cahaya yang dapat melakukannya. Kebencian tidak dapat mengusir kebencian; hanya kasih yang dapat melakukannya.", author: "Martin Luther King Jr." },
+  { text: "Iman adalah mengambil langkah pertama meskipun kamu tidak melihat seluruh tangga.", author: "Martin Luther King Jr." },
+  { text: "Tuhan tidak memanggil mereka yang mampu, tetapi memampukan mereka yang dipanggil.", author: "Dwight L. Moody" },
+  { text: "Doa adalah napas jiwa. Tanpanya, jiwa perlahan-lahan mati.", author: "Dwight L. Moody" },
+  { text: "Janganlah takut, sebab Aku menyertai engkau, janganlah bimbang, sebab Aku ini Allahmu.", author: "Yesaya 41:10" },
+  { text: "Percayalah kepada Tuhan dengan segenap hatimu dan janganlah bersandar kepada pengertianmu sendiri.", author: "Amsal 3:5" },
+  { text: "Kasih menutupi banyak sekali dosa.", author: "Petrus (1 Petrus 4:8)" },
+  { text: "Berbahagialah orang yang membawa damai, karena mereka akan disebut anak-anak Allah.", author: "Yesus (Matius 5:9)" },
+  { text: "Di mana dua atau tiga orang berkumpul dalam nama-Ku, di situ Aku ada di tengah-tengah mereka.", author: "Yesus (Matius 18:20)" },
+  { text: "Kepercayaan kepada Allah bukan berarti tidak ada badai, tetapi ada damai di tengah badai.", author: "Corrie ten Boom" },
+  { text: "Tidak ada lubang yang terlalu dalam sehingga kasih Allah tidak dapat mencapainya.", author: "Corrie ten Boom" },
+  { text: "Doa bukan mengubah Allah; ia mengubah orang yang berdoa.", author: "Søren Kierkegaard" },
+  { text: "Hati yang bersyukur adalah tanah paling subur untuk benih keajaiban tumbuh.", author: "Meister Eckhart" },
+  { text: "Mulailah dengan melakukan apa yang perlu, kemudian lakukan apa yang mungkin, dan tiba-tiba kamu akan melakukan yang mustahil.", author: "Fransiskus dari Assisi" }
+];
+
+function loadDailyReflection() {
+  const reflection = DAILY_REFLECTIONS[Math.floor(Math.random() * DAILY_REFLECTIONS.length)];
+  const textEl = document.getElementById("daily-reflection-text");
+  const authorEl = document.getElementById("daily-reflection-author");
+  if (textEl) textEl.textContent = `"${reflection.text}"`;
+  if (authorEl) authorEl.textContent = `— ${reflection.author}`;
+}
+
+
 function saveUser() { localStorage.setItem("mj_user", JSON.stringify(user)); }
 function loadUser() {
   const s = localStorage.getItem("mj_user");
@@ -141,6 +183,8 @@ function updateHomeScreen() {
 
   const bar = document.getElementById("home-progress-fill");
   if (bar) setTimeout(() => { bar.style.width = pct + "%"; }, 100);
+
+  loadDailyReflection();
 }
 
 function showLevelUp() {
