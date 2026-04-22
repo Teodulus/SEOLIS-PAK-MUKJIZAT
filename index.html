@@ -488,13 +488,18 @@ body {
 }
 
 @media (min-width: 640px) {
-  #screen-story {
+  #screen-story,
+  #screen-guide {
     padding-left: 0 !important;
   }
 
-  #screen-story .glass-header {
+  #screen-story .glass-header,
+  #screen-story .fixed-full,
+  #screen-guide .glass-header,
+  #screen-guide .fixed-full {
     left: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -525,7 +530,7 @@ body {
 <div id="screen-onboarding" class="screen active items-center justify-center" style="background: linear-gradient(160deg, #0c1b4d 0%, #1a56db 50%, #7c3aed 100%);">
   <div class="w-full px-6 pb-10 pt-4 text-center flex flex-col items-center gap-1" style="max-width:440px;margin:auto;">
     <div class="pop" style="animation-delay:0.1s">
-      <img src="images/Logo.png" alt="So Miracle Logo"
+      <img src="images/logo.png" alt="So Miracle Logo"
   style="width:360px; margin:0 auto 2px auto; display:block;">
 <p class="text-xs text-white/70 italic mt-1">
   Sebelum memulai perjalanan, pahami tujuan pembelajaran berikut:
@@ -590,6 +595,9 @@ body {
       </div>
     </div>
     <div class="flex items-center gap-2">
+      <button onclick="showScreen('screen-guide')" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--surface2);color:var(--primary);border:none;cursor:pointer;" title="Panduan">
+        <span class="material-symbols-outlined" style="font-size:20px">help</span>
+      </button>
       <button id="theme-btn" onclick="toggleTheme()" class="theme-toggle" title="Ganti tema"></button>
       <button onclick="showScreen('screen-badges')" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--surface2);color:var(--primary);border:none;cursor:pointer;">
         <span class="material-symbols-outlined" style="font-size:20px">military_tech</span>
@@ -652,7 +660,8 @@ body {
 
       <section class="card p-5 fade-up d4" style="background:var(--surface2)">
         <p class="font-sans text-xs font-semibold uppercase tracking-wider mb-2" style="color:var(--muted)">Refleksi Harian</p>
-        <p class="text-sm italic leading-relaxed" style="color:var(--on-surface)">"Iman adalah mengambil langkah pertama meskipun kamu tidak melihat seluruh tangga." — Martin Luther King Jr.</p>
+        <p id="daily-reflection-text" class="text-sm italic leading-relaxed" style="color:var(--on-surface)"></p>
+        <p id="daily-reflection-author" class="font-sans text-xs mt-2 font-semibold" style="color:var(--primary)"></p>
       </section>
 
     </div>
@@ -1000,7 +1009,7 @@ body {
       <span class="material-symbols-outlined" style="font-size:20px">arrow_back</span>
     </button>
     <h1 class="font-sans text-base font-bold" style="color:var(--primary)">Badge & Pencapaian</h1>
-    <div style="width:36px"></div>
+    <button onclick="toggleTheme()" class="theme-toggle"></button>
   </header>
   <main class="flex-1 px-5 pt-20 pb-4">
     <div class="mb-5 fade-up">
@@ -1077,6 +1086,135 @@ body {
     <button class="nav-btn" onclick="showScreen('screen-badges')"><span class="material-symbols-outlined">workspace_premium</span><span class="nav-label">Badge</span></button>
     <button class="nav-btn active" onclick="showScreen('screen-profile')"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">person</span><span class="nav-label">Profil</span></button>
   </nav>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PANDUAN
+══════════════════════════════════════════ -->
+<div id="screen-guide" class="screen pb-24" style="background:var(--bg)">
+  <header class="glass-header fixed top-0 left-0 right-0 z-40 px-5 py-3.5 flex justify-between items-center fixed-full">
+    <button onclick="showScreen('screen-home')" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--surface2);color:var(--primary);border:none;cursor:pointer;">
+      <span class="material-symbols-outlined" style="font-size:20px">arrow_back</span>
+    </button>
+    <h1 class="font-sans text-base font-bold" style="color:var(--primary)">Panduan</h1>
+    <div style="width:36px"></div>
+  </header>
+  <main class="flex-1 px-5 pt-20 pb-4 flex flex-col gap-4">
+    <div class="fade-up">
+      <h2 class="font-sans text-2xl font-extrabold mb-1" style="color:var(--on-bg)">Cara Bermain</h2>
+      <p class="text-sm leading-relaxed" style="color:var(--muted)">Ikuti langkah-langkah berikut untuk memulai perjalanan rohanimu.</p>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="card p-5 fade-up d1" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;width:70px;height:70px;background:var(--primary);border-radius:50%;opacity:0.05;"></div>
+      <div class="flex items-start gap-4">
+        <div style="width:44px;height:44px;border-radius:14px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:22px;color:var(--primary);font-variation-settings:'FILL' 1">dashboard</span>
+        </div>
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Langkah 1</p>
+          <h3 class="font-sans font-bold text-base mb-1" style="color:var(--on-bg)">Lihat Dasbor</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--muted)">Di halaman Beranda, pantau level, total poin, dan progres perjalananmu menuju level berikutnya.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card p-5 fade-up d2" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;width:70px;height:70px;background:var(--accent);border-radius:50%;opacity:0.05;"></div>
+      <div class="flex items-start gap-4">
+        <div style="width:44px;height:44px;border-radius:14px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:22px;color:var(--accent);font-variation-settings:'FILL' 1">map</span>
+        </div>
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Langkah 2</p>
+          <h3 class="font-sans font-bold text-base mb-1" style="color:var(--on-bg)">Pilih Mukjizat</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--muted)">Buka tab <strong>Perjalanan</strong> untuk melihat Peta Perjalanan. Pilih mukjizat yang tersedia dan mulai petualangan barumu.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card p-5 fade-up d3" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;width:70px;height:70px;background:var(--success);border-radius:50%;opacity:0.05;"></div>
+      <div class="flex items-start gap-4">
+        <div style="width:44px;height:44px;border-radius:14px;background:var(--success-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:22px;color:var(--success);font-variation-settings:'FILL' 1">auto_stories</span>
+        </div>
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Langkah 3</p>
+          <h3 class="font-sans font-bold text-base mb-1" style="color:var(--on-bg)">Baca Cerita</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--muted)">Nikmati narasi mendalam tiap mukjizat. Kamu bisa mengaktifkan fitur <strong>Audio</strong> agar cerita dibacakan otomatis untukmu.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card p-5 fade-up d4" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;width:70px;height:70px;background:var(--primary);border-radius:50%;opacity:0.05;"></div>
+      <div class="flex items-start gap-4">
+        <div style="width:44px;height:44px;border-radius:14px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:22px;color:var(--primary);font-variation-settings:'FILL' 1">touch_app</span>
+        </div>
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Langkah 4</p>
+          <h3 class="font-sans font-bold text-base mb-1" style="color:var(--on-bg)">Ambil Keputusan</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--muted)">Di setiap titik cerita, pilih 1 dari 3 pilihan yang mencerminkan sikapmu. Setiap pilihan membentuk refleksimu.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="card p-5 fade-up d5" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;width:70px;height:70px;background:var(--accent);border-radius:50%;opacity:0.05;"></div>
+      <div class="flex items-start gap-4">
+        <div style="width:44px;height:44px;border-radius:14px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:22px;color:var(--accent);font-variation-settings:'FILL' 1">quiz</span>
+        </div>
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Langkah 5</p>
+          <h3 class="font-sans font-bold text-base mb-1" style="color:var(--on-bg)">Jawab Kuis</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--muted)">Uji pemahamanmu lewat kuis singkat. Jangan khawatir jika salah — kamu boleh mencoba ulang sampai berhasil.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="card p-5 fade-up d5" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;width:70px;height:70px;background:var(--success);border-radius:50%;opacity:0.05;"></div>
+      <div class="flex items-start gap-4">
+        <div style="width:44px;height:44px;border-radius:14px;background:var(--success-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:22px;color:var(--success);font-variation-settings:'FILL' 1">edit_note</span>
+        </div>
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Langkah 6</p>
+          <h3 class="font-sans font-bold text-base mb-1" style="color:var(--on-bg)">Tulis Refleksi</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--muted)">Ungkapkan perasaan dan pelajaran yang kamu petik. Tulis minimal <strong>10 karakter</strong> untuk melanjutkan ke hadiah.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="card p-5 fade-up d5" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;width:70px;height:70px;background:var(--accent);border-radius:50%;opacity:0.05;"></div>
+      <div class="flex items-start gap-4">
+        <div style="width:44px;height:44px;border-radius:14px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:22px;color:var(--accent);font-variation-settings:'FILL' 1">workspace_premium</span>
+        </div>
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Langkah 7</p>
+          <h3 class="font-sans font-bold text-base mb-1" style="color:var(--on-bg)">Terima Hadiah</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--muted)">Setiap episode yang selesai memberikanmu <strong>poin</strong>, <strong>badge</strong> eksklusif, dan kemungkinan naik <strong>level</strong>. Kumpulkan semuanya!</p>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="showScreen('screen-home')" class="btn-primary fade-up d5">
+      Siap Memulai!
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
+  </main>
 </div>
 
 <!-- Loading overlay -->
