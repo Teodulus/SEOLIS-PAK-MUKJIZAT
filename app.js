@@ -61,51 +61,10 @@ function initApp() {
   renderJourneyMap();
   renderBadges();
   updateProfile();
+  updateDailyQuote();
 }
 
-// ─── DAILY REFLECTION ────────────────────────────────────────
-const DAILY_REFLECTIONS = [
-  { text: "Akulah jalan, kebenaran, dan hidup. Tidak ada seorang pun yang datang kepada Bapa tanpa melalui Aku.", author: "Yesus (Yohanes 14:6)" },
-  { text: "Mintalah, maka akan diberikan kepadamu. Carilah, maka kamu akan mendapat. Ketuklah, maka pintu akan dibukakan bagimu.", author: "Yesus (Matius 7:7)" },
-  { text: "Sebab Allah begitu mengasihi dunia ini, sehingga Ia telah mengaruniakan Anak-Nya yang tunggal.", author: "Yesus (Yohanes 3:16)" },
-  { text: "Segala perkara dapat kutanggung di dalam Dia yang memberi kekuatan kepadaku.", author: "Paulus (Filipi 4:13)" },
-  { text: "Kasih itu sabar, kasih itu murah hati, tidak memegahkan diri, tidak sombong.", author: "Paulus (1 Korintus 13:4)" },
-  { text: "Jangan kamu kuatir tentang apapun juga, tetapi nyatakanlah dalam segala hal keinginanmu kepada Allah.", author: "Paulus (Filipi 4:6)" },
-  { text: "Tuhan adalah gembalaku, takkan kekurangan aku.", author: "Daud (Mazmur 23:1)" },
-  { text: "Aku bersyukur kepada-Mu sebab Engkau telah membuat aku dengan dahsyat dan ajaib.", author: "Daud (Mazmur 139:14)" },
-  { text: "Berbahagialah orang yang miskin di hadapan Allah, karena merekalah yang empunya Kerajaan Sorga.", author: "Yesus (Matius 5:3)" },
-  { text: "Iman tanpa perbuatan pada hakikatnya adalah mati.", author: "Yakobus (Yakobus 2:26)" },
-  { text: "Jika Allah di pihak kita, siapakah yang akan melawan kita?", author: "Paulus (Roma 8:31)" },
-  { text: "Kasihilah sesamamu manusia seperti dirimu sendiri.", author: "Yesus (Markus 12:31)" },
-  { text: "Anda tidak pernah terlalu tua untuk menetapkan tujuan baru atau memimpikan mimpi baru.", author: "C.S. Lewis" },
-  { text: "Iman adalah daya yang membawa kita melampaui batas akal dan membuka cakrawala yang tak terbatas.", author: "C.S. Lewis" },
-  { text: "Jika kamu menghakimi orang, kamu tidak punya waktu untuk mencintai mereka.", author: "Mother Teresa" },
-  { text: "Bukan seberapa banyak yang kamu lakukan, tetapi seberapa besar cinta yang kamu curahkan dalam setiap perbuatan.", author: "Mother Teresa" },
-  { text: "Kegelapan tidak dapat mengusir kegelapan; hanya cahaya yang dapat melakukannya. Kebencian tidak dapat mengusir kebencian; hanya kasih yang dapat melakukannya.", author: "Martin Luther King Jr." },
-  { text: "Iman adalah mengambil langkah pertama meskipun kamu tidak melihat seluruh tangga.", author: "Martin Luther King Jr." },
-  { text: "Tuhan tidak memanggil mereka yang mampu, tetapi memampukan mereka yang dipanggil.", author: "Dwight L. Moody" },
-  { text: "Doa adalah napas jiwa. Tanpanya, jiwa perlahan-lahan mati.", author: "Dwight L. Moody" },
-  { text: "Janganlah takut, sebab Aku menyertai engkau, janganlah bimbang, sebab Aku ini Allahmu.", author: "Yesaya 41:10" },
-  { text: "Percayalah kepada Tuhan dengan segenap hatimu dan janganlah bersandar kepada pengertianmu sendiri.", author: "Amsal 3:5" },
-  { text: "Kasih menutupi banyak sekali dosa.", author: "Petrus (1 Petrus 4:8)" },
-  { text: "Berbahagialah orang yang membawa damai, karena mereka akan disebut anak-anak Allah.", author: "Yesus (Matius 5:9)" },
-  { text: "Di mana dua atau tiga orang berkumpul dalam nama-Ku, di situ Aku ada di tengah-tengah mereka.", author: "Yesus (Matius 18:20)" },
-  { text: "Kepercayaan kepada Allah bukan berarti tidak ada badai, tetapi ada damai di tengah badai.", author: "Corrie ten Boom" },
-  { text: "Tidak ada lubang yang terlalu dalam sehingga kasih Allah tidak dapat mencapainya.", author: "Corrie ten Boom" },
-  { text: "Doa bukan mengubah Allah; ia mengubah orang yang berdoa.", author: "Søren Kierkegaard" },
-  { text: "Hati yang bersyukur adalah tanah paling subur untuk benih keajaiban tumbuh.", author: "Meister Eckhart" },
-  { text: "Mulailah dengan melakukan apa yang perlu, kemudian lakukan apa yang mungkin, dan tiba-tiba kamu akan melakukan yang mustahil.", author: "Fransiskus dari Assisi" }
-];
-
-function loadDailyReflection() {
-  const reflection = DAILY_REFLECTIONS[Math.floor(Math.random() * DAILY_REFLECTIONS.length)];
-  const textEl = document.getElementById("daily-reflection-text");
-  const authorEl = document.getElementById("daily-reflection-author");
-  if (textEl) textEl.textContent = `"${reflection.text}"`;
-  if (authorEl) authorEl.textContent = `— ${reflection.author}`;
-}
-
-
+// ─── PERSISTENCE ──────────────────────────────────────────────
 function saveUser() { localStorage.setItem("mj_user", JSON.stringify(user)); }
 function loadUser() {
   const s = localStorage.getItem("mj_user");
@@ -183,8 +142,6 @@ function updateHomeScreen() {
 
   const bar = document.getElementById("home-progress-fill");
   if (bar) setTimeout(() => { bar.style.width = pct + "%"; }, 100);
-
-  loadDailyReflection();
 }
 
 function showLevelUp() {
@@ -967,16 +924,108 @@ function stopTTS() {
 }
 
 function toggleTTS() {
-  const m = appData.miracles[currentIdx];
+  const m = appData.miracles[currentIdx]; // Mendeklarasikan variabel 'm'
+  const text = getFullStoryText(m); // Memanggil fungsi teks
 
-  const text = getFullStoryText(m); // 🔥 INI KUNCI
-
-  if (!speechSynthesis.speaking) {
+  if (!tts.isSpeaking) {
     playTTS(text);
-  } else if (speechSynthesis.paused) {
-    speechSynthesis.resume();
+  } else if (tts.isPaused) {
+    resumeTTS();
   } else {
+    pauseTTS();
+  }
+}
+
+function playTTS(text) {
+  stopTTS();
+
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "id-ID";
+  u.rate = 0.95;
+
+  u.onstart = () => {
+    tts.isSpeaking = true;
+    tts.isPaused = false;
+    updateTTSButton();
+  };
+
+  u.onend = () => {
+    tts.isSpeaking = false;
+    tts.isPaused = false;
+    updateTTSButton();
+  };
+
+  speechSynthesis.speak(u);
+  tts.utterance = u;
+}
+
+function pauseTTS() {
+  if (speechSynthesis.speaking && !speechSynthesis.paused) {
     speechSynthesis.pause();
+    tts.isPaused = true;
+    updateTTSButton();
+  }
+}
+
+function resumeTTS() {
+  if (speechSynthesis.paused) {
+    speechSynthesis.resume();
+    tts.isPaused = false;
+    updateTTSButton();
+  }
+}
+
+function stopTTS() {
+  speechSynthesis.cancel();
+  tts.isSpeaking = false;
+  tts.isPaused = false;
+  updateTTSButton();
+}
+
+
+
+
+
+function toggleTTS() {
+  // Ambil data mukjizat yang sedang aktif berdasarkan index
+  const m = appData.miracles[currentIdx]; 
+  
+  // Pastikan variabel m ada sebelum diproses
+  if (!m) return;
+
+  const text = getFullStoryText(m);
+
+  if (!tts.isSpeaking) {
+    playTTS(text);
+  } else if (tts.isPaused) {
+    resumeTTS();
+  } else {
+    pauseTTS();
+  }
+}
+/* === PERBAIKAN TOTAL BAGIAN TTS DAN HELPER === */
+
+function getFullStoryText(m) {
+  if (!m) return "";
+  return `
+    ${m.title}.
+    ${m.subtitle}.
+    ${m.story_parts.join(" ")}.
+    Makna inti.
+    ${m.makna_inti}
+  `;
+}
+
+function updateTTSButton() {
+  const btn = document.getElementById("btn-tts");
+  if (!btn) return;
+
+  if (!tts.isSpeaking) {
+    btn.innerText = "▶️ Dengarkan Cerita";
+  } else if (tts.isPaused) {
+    btn.innerText = "▶️ Lanjutkan";
+  } else {
+    btn.innerText = "⏸️ Pause";
   }
 }
 
@@ -1028,17 +1077,9 @@ function stopTTS() {
 
 function toggleTTS() {
   const m = appData.miracles[currentIdx];
-  {
-  return `
-    ${m.title}.
-    ${m.subtitle}.
-    
-    ${m.story_parts.join(" ")}
-    
-    Makna inti:
-    ${m.makna_inti}
-  `;
-}
+  if (!m) return;
+
+  const text = getFullStoryText(m);
 
   if (!tts.isSpeaking) {
     playTTS(text);
@@ -1049,98 +1090,117 @@ function toggleTTS() {
   }
 }
 
-u.onstart = () => {
-  tts.isSpeaking = true;
-  tts.isPaused = false;
-  updateTTSButton(); // 🔥 ini penting
-};
-
-u.onend = () => {
-  tts.isSpeaking = false;
-  tts.isPaused = false;
-  updateTTSButton(); // 🔥 ini penting
-};
-
-function toggleTTS() {
-  const m = appData.miracles[currentIdx];
-const text = getFullStoryText(m);
-  console.log(getFullStoryText(m));
-
-  if (!tts.isSpeaking) {
-    playTTS(text);        // ▶️ PLAY
-  } else if (tts.isPaused) {
-    resumeTTS();          // ▶️ RESUME
-  } else {
-    pauseTTS();           // ⏸️ PAUSE
-  }
-}
-
-function updateTTSButton() {
-  const btn = document.getElementById("btn-tts");
-  if (!btn) return;
-
-  if (!tts.isSpeaking) {
-    btn.innerText = "▶️ Dengarkan Cerita";
-  } else if (tts.isPaused) {
-    btn.innerText = "▶️ Lanjutkan";
-  } else {
-    btn.innerText = "⏸️ Pause";
-  }
-}
-
-function getFullStoryText(m) {
-  return [
-    m.title,
-    m.subtitle,
-    ...m.story_parts,
-    "Makna inti",
-    m.makna_inti
-  ].join(". ");
-}
-
-function getFullStoryText(m) {
-  return `
-  ${m.title}.
-  ${m.subtitle}.
-  ${m.story_parts.join(" ")}.
-  Makna inti.
-  ${m.makna_inti}
-  `;
-}
-
-user.quizAttempts[m.id] = (user.quizAttempts[m.id] || 0) + 1;
-if (user.quizAttempts[m.id] >= 2) {
-  tampilkanJawabanBenar();
-}
-
 function renderDots(stepIndex) {
-  const labels = ["Cerita","Pilihan","Kuis","Refleksi"];
-  const el = document.getElementById("story-dots");
+  const labels = ["Cerita", "Pilihan", "Kuis", "Refleksi"];
+  const el = document.querySelectorAll(".story-dots"); // Menggunakan class agar semua dot terupdate
   if (!el) return;
 
-  el.innerHTML = labels.map((_, i) => `
-    <div style="
-      width:${i===stepIndex?'28px':'8px'};
-      height:8px;
-      border-radius:99px;
-      background:${i===stepIndex?'var(--primary)':'var(--surface3)'};
-      transition:all 0.3s;
-    "></div>
+  el.forEach(container => {
+    container.innerHTML = labels.map((_, i) => `
+      <div style="
+        width:${i === stepIndex ? '28px' : '8px'};
+        height:8px;
+        border-radius:99px;
+        background:${i === stepIndex ? 'var(--primary)' : 'var(--surface3)'};
+        transition:all 0.3s;
+      "></div>
+    `).join("");
+  });
+}
+
+function updateDots(stepIndex) {
+  renderDots(stepIndex);
+}
+
+function updateHomeScreen() {
+  const total = appData?.miracles?.length || 16;
+  const done = user.completed.length;
+  const pct = Math.round((done / total) * 100);
+  const rank = getRank();
+
+  set("home-greeting", `Halo, ${user.name}!`);
+  set("home-level", `Level ${user.level}`);
+  set("home-rank-badge", rank.label);
+
+  const rb = document.getElementById("home-rank-badge");
+  if (rb) rb.className = `rank-badge rank-${rank.id}`;
+
+  set("home-pct", pct + "%");
+  set("home-points", user.points.toLocaleString("id-ID"));
+  set("home-completed", done);
+  set("home-progress-label", `${done} / ${total} Mukjizat Selesai`);
+
+  const bar = document.getElementById("home-progress-fill");
+  if (bar) setTimeout(() => { bar.style.width = pct + "%"; }, 100);
+
+  // --- LOGIKA 15 KUTIPAN ACAK ---
+  const quotes = [
+"Iman adalah mengambil langkah pertama meskipun kamu tidak melihat seluruh tangga. | Martin Luther King Jr.",
+    "Mukjizat bukan hanya terjadi pada kita, tapi melalui kita. | Anonim",
+    "Jangan takut, percaya saja. | Yesus (Markus 5:36)",
+    "Ketaatan yang sederhana adalah pintu bagi mukjizat yang luar biasa. | SOMIRACLE",
+    "Ketika kamu bersyukur, kamu mulai melihat mukjizat di sekelilingmu. | Anonim",
+    "Doa tidak selalu mengubah situasi, tapi doa selalu mengubah kita. | C.S. Lewis",
+    "Harapan adalah sauh bagi jiwa yang tetap teguh dalam badai. | Ibrani 6:19",
+    "Apa yang bagi manusia mustahil, bagi Allah segalanya mungkin. | Lukas 18:27",
+    "Mukjizat terbesar adalah perubahan hati yang belajar untuk mengasihi. | St. Agustinus",
+    "Tuhan tidak memanggil orang yang mampu, Dia memampukan orang yang terpanggil. | Rick Warren",
+    "Jangan biarkan ketakutanmu mengatur masa depanmu, biarkan imanmu yang memimpin. | Anonim",
+    "Setiap matahari terbit adalah bukti mukjizat kesetiaan Tuhan yang baru. | Ratapan 3:22-23",
+    "Iman bukan berarti Tuhan melakukan apa yang kita mau, tapi Tuhan melakukan apa yang benar. | Max Lucado",
+    "Kadang mukjizat itu bukan terhentinya badai, tapi ketenangan di dalam badai. | Anonim",
+    "Berjalan di atas air butuh keberanian untuk tetap menatap Sang Guru, bukan ombaknya. | Refleksi Petrus"
+  ];
+
+  // Pilih satu kutipan secara acak
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const reflectionEl = document.getElementById("home-reflection-text");
+  if (reflectionEl) {
+    reflectionEl.innerText = randomQuote;
+  }
+}
+
+// ─── GLOSARIUM ────────────────────────────────────────────────
+
+function openGlosarium() {
+  renderGlosarium();
+  showScreen('screen-glosarium');
+}
+
+function renderGlosarium() {
+  const container = document.getElementById("glosarium-list");
+  if (!container || !appData || !appData.glossary) return;
+
+  // Mengurutkan glosarium secara alfabetis agar rapi
+  const sortedGlossary = [...appData.glossary].sort((a, b) => a.term.localeCompare(b.term));
+
+  container.innerHTML = sortedGlossary.map(item => `
+    <div class="card p-4 flex justify-between items-center fade-up" onclick="showGlossaryTerm('${escStr(item.term)}', '${escStr(item.definition)}')" style="cursor:pointer; margin-bottom: 8px;">
+      <div style="flex: 1; padding-right: 12px;">
+        <h3 class="font-sans font-bold text-base" style="color:var(--primary)">${item.term}</h3>
+        <p class="font-sans text-xs" style="color:var(--muted); margin-top:4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4;">
+          ${item.definition}
+        </p>
+      </div>
+      <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center;">
+        <span class="material-symbols-outlined" style="color:var(--primary); font-size: 18px;">chevron_right</span>
+      </div>
+    </div>
   `).join("");
 }
 
-user.quizAttempts[m.id] = (user.quizAttempts[m.id] || 0) + 1;
+function showGlossaryTerm(term, desc) {
+  const modal = document.getElementById("modal-glossary");
+  const title = document.getElementById("glos-title");
+  const descEl = document.getElementById("glos-desc");
 
-if (user.quizAttempts[m.id] >= 2) {
-  tampilkanJawabanBenar();
+  if (title) title.textContent = term;
+  if (descEl) descEl.textContent = desc;
+  if (modal) modal.classList.add("active");
 }
 
-const msg = isCorrect
-  ? "Pilihanmu menunjukkan pemahaman 👍"
-  : "Coba renungkan lagi makna cerita ini...";
-
-set("quiz-feedback-text", msg);
-
-if (!isCorrect && !quizRetry) {
-  setTimeout(() => retryQuiz(), 1200);
+function closeGlossary(e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  const modal = document.getElementById("modal-glossary");
+  if (modal) modal.classList.remove("active");
 }
