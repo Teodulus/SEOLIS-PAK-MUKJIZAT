@@ -232,23 +232,26 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: 18px;
-  padding: 18px;
+  padding: 16px 20px; /* Disesuaikan agar lebih rapi */
   width: 100%;
   text-align: left;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(.4,0,.2,1);
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  align-items: center; /* DIUBAH DARI flex-start AGAR IKON & TEKS RATA TENGAH */
+  gap: 16px;
 }
 .option-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .option-card:active { transform: scale(0.98); }
 .option-card.opt-correct { background: var(--success-light); border-color: var(--success); animation: correctFlash 0.6s ease; }
+
+/* Tambahan agar bulatan ikon menjadi putih saat jawaban benar (seperti di gambar) */
+.option-card.opt-correct div { background: var(--surface) !important; color: var(--success) !important; }
+
 .option-card.opt-wrong { background: var(--error-light); border-color: var(--error); animation: shake 0.4s ease; }
 .option-card.opt-revealed { background: var(--success-light); border-color: var(--success); opacity: 0.7; }
 .option-card.opt-disabled { opacity: 0.45; cursor: default; }
 .option-card.opt-disabled:hover { transform: none; box-shadow: none; }
-
 /* ── PROGRESS BAR ─────────────────────────────────── */
 .progress-bar { height: 8px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
 .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), #60a5fa); border-radius: 99px; transition: width 0.8s cubic-bezier(.4,0,.2,1); }
@@ -488,15 +491,25 @@ body {
 }
 
 @media (min-width: 640px) {
+  /* Hilangkan padding kiri untuk semua screen yang tidak memiliki side nav */
   #screen-story,
-  #screen-guide {
+  #screen-guide,
+  #screen-decision,
+  #screen-quiz,
+  #screen-reflection,
+  #screen-reward,
+  #screen-glosarium {
     padding-left: 0 !important;
   }
 
-  #screen-story .glass-header,
-  #screen-story .fixed-full,
-  #screen-guide .glass-header,
-  #screen-guide .fixed-full {
+  /* Kembalikan ukuran header & footer agar full width (rata penuh) */
+  #screen-story .glass-header, #screen-story .fixed-full,
+  #screen-guide .glass-header, #screen-guide .fixed-full,
+  #screen-decision .glass-header, #screen-decision .fixed-full,
+  #screen-quiz .glass-header, #screen-quiz .fixed-full,
+  #screen-reflection .glass-header, #screen-reflection .fixed-full,
+  #screen-reward .glass-header, #screen-reward .fixed-full,
+  #screen-glosarium .glass-header, #screen-glosarium .fixed-full {
     left: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
