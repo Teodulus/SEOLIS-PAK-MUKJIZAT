@@ -61,7 +61,6 @@ function initApp() {
   renderJourneyMap();
   renderBadges();
   updateProfile();
-  updateDailyQuote();
 }
 
 // ─── PERSISTENCE ──────────────────────────────────────────────
@@ -96,7 +95,7 @@ function completeOnboarding() {
   if (!v) { alert("Masukkan namamu dulu ya!"); return; }
   user.name = v;
   saveUser();
-  initApp();
+  initApp(); // Ini akan menjalankan updateHomeScreen dan kutipan
   showScreen("screen-home");
 }
 
@@ -119,29 +118,6 @@ function getRank() {
   let rank = ranks[0];
   for (const r of ranks) { if (user.points >= r.minPoints) rank = r; }
   return rank;
-}
-
-// ─── HOME ─────────────────────────────────────────────────────
-function updateHomeScreen() {
-  const total = appData?.miracles?.length || 16;
-  const done = user.completed.length;
-  const pct = Math.round((done / total) * 100);
-  const rank = getRank();
-
-  set("home-greeting", `Halo, ${user.name}!`);
-  set("home-level", `Level ${user.level}`);
-  set("home-rank-badge", rank.label);
-
-  const rb = document.getElementById("home-rank-badge");
-  if (rb) rb.className = `rank-badge rank-${rank.id}`;
-
-  set("home-pct", pct + "%");
-  set("home-points", user.points.toLocaleString("id-ID"));
-  set("home-completed", done);
-  set("home-progress-label", `${done} / ${total} Mukjizat Selesai`);
-
-  const bar = document.getElementById("home-progress-fill");
-  if (bar) setTimeout(() => { bar.style.width = pct + "%"; }, 100);
 }
 
 function showLevelUp() {
@@ -986,23 +962,6 @@ function stopTTS() {
 
 
 
-function toggleTTS() {
-  // Ambil data mukjizat yang sedang aktif berdasarkan index
-  const m = appData.miracles[currentIdx]; 
-  
-  // Pastikan variabel m ada sebelum diproses
-  if (!m) return;
-
-  const text = getFullStoryText(m);
-
-  if (!tts.isSpeaking) {
-    playTTS(text);
-  } else if (tts.isPaused) {
-    resumeTTS();
-  } else {
-    pauseTTS();
-  }
-}
 /* === PERBAIKAN TOTAL BAGIAN TTS DAN HELPER === */
 
 function getFullStoryText(m) {
