@@ -1,11 +1,9 @@
 {
-
-"global_objectives": [
+  "global_objectives": [
     "Memahami makna mukjizat Yesus dalam Injil",
     "Mengaitkan nilai iman dengan kehidupan sehari-hari",
     "Mengembangkan refleksi spiritual melalui cerita interaktif"
   ],
-
   "phases": [
     {
       "id": "kana",
@@ -33,14 +31,25 @@
     }
   ],
   "ranks": [
-    { "id": "pengikut", "label": "Pengikut", "minPoints": 0, "icon": "person" },
-    { "id": "murid", "label": "Murid", "minPoints": 150, "icon": "school" },
-    { "id": "rasul", "label": "Rasul", "minPoints": 350, "icon": "military_tech" }
+    {
+      "id": "pengikut",
+      "label": "Pengikut",
+      "minPoints": 0,
+      "icon": "person"
+    },
+    {
+      "id": "murid",
+      "label": "Murid",
+      "minPoints": 150,
+      "icon": "school"
+    },
+    {
+      "id": "rasul",
+      "label": "Rasul",
+      "minPoints": 350,
+      "icon": "military_tech"
+    }
   ],
-
-
-
-  
   "miracles": [
     {
       "id": 1,
@@ -87,7 +96,12 @@
       },
       "quiz": {
         "question": "Di kota mana mukjizat pertama Yesus terjadi?",
-        "options": ["Kana", "Yerusalem", "Nazaret", "Betlehem"],
+        "options": [
+          "Kana",
+          "Yerusalem",
+          "Nazaret",
+          "Betlehem"
+        ],
         "answer": "Kana",
         "insight": "Yohanes 2:11 — Kana di Galilea adalah tempat Yesus memulai pelayanan publik-Nya. Injil Yohanes menyebut ini sebagai 'tanda pertama' yang menyatakan kemuliaan-Nya, dan murid-murid pun percaya kepada-Nya.",
         "points_correct": 10,
@@ -155,7 +169,7 @@
           "Tidak mungkin ada ikan di sini, tapi terserahlah"
         ],
         "answer": "Karena Engkau menyuruhnya, aku akan menebarkan jala",
-        "insight": "Lukas 5:5 — Kalimat Petrus ini adalah salah satu pernyataan iman paling indah dalam Injil. Ia mengakui ketidakyakinannya ('telah sepanjang malam...'), namun memilih taat kepada otoritas Yesus di atas pengalamannya sendiri.",
+        "insight": "Lukas 5:5 — Kalimat Petrus ini adalah salah satu pernyataan iman paling indah dalam Injil. Ia mengakui ketidakyakinannya ('telah sepanjang malam...'), namun memilih taat kepada Yesus di atas pengalamannya sendiri.",
         "points_correct": 10,
         "points_partial": 3
       },
@@ -214,7 +228,12 @@
       },
       "quiz": {
         "question": "Apa yang dikatakan Yesus kepada badai?",
-        "options": ["Diam! Tenang!", "Berhenti sekarang!", "Pergilah, hai badai!", "Tenangkan dirimu!"],
+        "options": [
+          "Diam! Tenang!",
+          "Berhenti sekarang!",
+          "Pergilah, hai badai!",
+          "Tenangkan dirimu!"
+        ],
         "answer": "Diam! Tenang!",
         "insight": "Markus 4:39 — Dalam bahasa Yunaninya, Yesus menggunakan kata-kata yang juga digunakan untuk menegur roh jahat — menunjukkan otoritas penuh-Nya atas seluruh ciptaan. Kata-kata-Nya cukup untuk menghentikan badai.",
         "points_correct": 10,
@@ -275,7 +294,12 @@
       },
       "quiz": {
         "question": "Di antara kedua belas murid, siapa yang berani melangkah keluar dari perahu untuk berjalan di atas air?",
-        "options": ["Petrus", "Yohanes", "Yakobus", "Andreas"],
+        "options": [
+          "Petrus",
+          "Yohanes",
+          "Yakobus",
+          "Andreas"
+        ],
         "answer": "Petrus",
         "insight": "Matius 14:29 — Petrus satu-satunya manusia selain Yesus yang pernah berjalan di atas air. Kegagalannya diabadikan — namun begitu pula keberaniannya. Ia membuktikan bahwa iman yang menatap Yesus mampu mengatasi gravitasi.",
         "points_correct": 10,
@@ -336,7 +360,12 @@
       },
       "quiz": {
         "question": "Berapa roti dan ikan yang tersedia sebelum mukjizat ini terjadi?",
-        "options": ["5 roti dan 2 ikan", "7 roti dan 3 ikan", "3 roti dan 5 ikan", "10 roti dan 2 ikan"],
+        "options": [
+          "5 roti dan 2 ikan",
+          "7 roti dan 3 ikan",
+          "3 roti dan 5 ikan",
+          "10 roti dan 2 ikan"
+        ],
         "answer": "5 roti dan 2 ikan",
         "insight": "Yohanes 6:9 — Roti jelai adalah makanan rakyat jelata, bukan makanan mewah. Seorang anak kecil — bukan tokoh penting — menjadi instrumen mukjizat terbesar. Allah sering memilih yang kecil dan tidak dianggap untuk menyatakan kuasa-Nya.",
         "points_correct": 10,
@@ -463,7 +492,12 @@
       },
       "quiz": {
         "question": "Berapa tahun perempuan itu menderita penyakit pendarahan sebelum disembuhkan Yesus?",
-        "options": ["12 tahun", "7 tahun", "38 tahun", "3 tahun"],
+        "options": [
+          "12 tahun",
+          "7 tahun",
+          "38 tahun",
+          "3 tahun"
+        ],
         "answer": "12 tahun",
         "insight": "Lukas 8:43 — Angka 12 tahun disebut secara spesifik — sama dengan usia putri Yairus yang kemudian dibangkitkan (Lukas 8:42). Markus mencatat ia sudah menghabiskan semua uangnya dan kondisinya semakin buruk. Sentuhan pada jubah Yesus adalah tindakan iman putus asa yang paling indah.",
         "points_correct": 10,
@@ -524,7 +558,12 @@
       },
       "quiz": {
         "question": "Dari sepuluh orang yang disembuhkan, berapa yang kembali kepada Yesus untuk berterima kasih?",
-        "options": ["1", "2", "5", "9"],
+        "options": [
+          "1",
+          "2",
+          "5",
+          "9"
+        ],
         "answer": "1",
         "insight": "Lukas 17:15-16 — Yang satu itu adalah orang Samaria — musuh tradisional orang Yahudi. Ironi yang kuat: orang 'luar' justru yang memiliki hati paling penuh syukur. Allah tidak menilai dari latar belakang, melainkan dari hati.",
         "points_correct": 10,
@@ -585,7 +624,12 @@
       },
       "quiz": {
         "question": "Apa nama yang diberikan roh-roh jahat ketika Yesus bertanya kepada mereka?",
-        "options": ["Legion", "Abaddon", "Beelzebul", "Multitude"],
+        "options": [
+          "Legion",
+          "Abaddon",
+          "Beelzebul",
+          "Multitude"
+        ],
         "answer": "Legion",
         "insight": "Markus 5:9 — Sebuah Legion Romawi terdiri dari 3.000-6.000 tentara. Nama ini mengungkapkan betapa massifnya ikatan rohani yang dialami pria itu. Namun satu perintah dari Yesus cukup untuk membubarkan seluruh 'legiun' itu.",
         "points_correct": 10,
@@ -646,7 +690,12 @@
       },
       "quiz": {
         "question": "Apa kata-kata Yesus dalam bahasa Aram ketika membangkitkan putri Yairus?",
-        "options": ["Talita kum", "Lazarus, ke marilah", "Efffata", "Bangkit dan berjalan"],
+        "options": [
+          "Talita kum",
+          "Lazarus, ke marilah",
+          "Efffata",
+          "Bangkit dan berjalan"
+        ],
         "answer": "Talita kum",
         "insight": "Markus 5:41 — Markus menyimpan frasa Aram aslinya: 'Talita kum' (anak perempuan, bangunlah). Ini adalah saat yang sangat pribadi dan lembut — Yesus tidak mengucapkan kata-kata ritual panjang, hanya kata-kata seorang ayah yang membangunkan anaknya dari tidur.",
         "points_correct": 10,
@@ -707,7 +756,12 @@
       },
       "quiz": {
         "question": "Apa hubungan pemuda yang dibangkitkan Yesus di Nain dengan perempuan yang berduka?",
-        "options": ["Anak satu-satunya dari seorang janda", "Suami dari seorang perempuan muda", "Saudara laki-laki perempuan itu", "Ayah dari perempuan itu"],
+        "options": [
+          "Anak satu-satunya dari seorang janda",
+          "Suami dari seorang perempuan muda",
+          "Saudara laki-laki perempuan itu",
+          "Ayah dari perempuan itu"
+        ],
         "answer": "Anak satu-satunya dari seorang janda",
         "insight": "Lukas 7:12 — 'Anak tunggal ibunya dan ibunya itu adalah janda.' Dalam konteks budaya Yahudi kuno, seorang janda yang kehilangan anak laki-laki satu-satunya kehilangan segalanya: perlindungan, penghasilan, dan masa depan. Yesus melihat keseluruhan situasi itu — dan bertindak.",
         "points_correct": 10,
@@ -768,7 +822,12 @@
       },
       "quiz": {
         "question": "Ke mana Yesus menyuruh orang buta itu pergi untuk membasuh matanya?",
-        "options": ["Kolam Siloam", "Sungai Yordan", "Kolam Betesda", "Laut Galilea"],
+        "options": [
+          "Kolam Siloam",
+          "Sungai Yordan",
+          "Kolam Betesda",
+          "Laut Galilea"
+        ],
         "answer": "Kolam Siloam",
         "insight": "Yohanes 9:7 — 'Siloam' artinya 'Yang Diutus' — nama yang profetis. Yesus, yang adalah 'Yang Diutus' oleh Bapa, mengutus orang itu ke kolam yang namanya berbicara tentang Yesus sendiri. Ketaatan si buta membuka mukjizat.",
         "points_correct": 10,
@@ -783,6 +842,198 @@
       "reward": "Terang",
       "reward_message": "Kamu belajar bahwa Yesus bukan hanya memberi penglihatan fisik — Ia adalah Terang Dunia yang menerangi kegelapan jiwa.",
       "episode_closing": "\"Mata yang paling buta bukanlah yang tidak bisa melihat — melainkan yang menolak untuk percaya.\""
+    },
+        {
+      "id": 14,
+      "phase": "galilea",
+      "title": "Iman Seorang Perwira Romawi",
+      "subtitle": "Sembuh dari Jarak Jauh",
+      "verse": "Lukas 7:1-10",
+      "level": 14,
+      "difficulty": "sedang",
+      "icon": "military_tech",
+      "image": "images/perwira.jpg",
+      "category": "penyembuhan",
+      "story_parts": [
+        "Di Kapernaum, seorang perwira Romawi memiliki seorang hamba yang sangat dihargainya, namun hamba itu sedang sakit keras dan hampir mati.",
+        "Ketika perwira itu mendengar tentang Yesus, ia menyuruh beberapa tua-tua Yahudi untuk meminta Yesus datang menyembuhkan hambanya. Tua-tua itu memohon kepada Yesus dengan sangat, mengatakan bahwa perwira itu layak ditolong karena ia mengasihi bangsa Yahudi dan telah membangun rumah ibadat bagi mereka.",
+        "Yesus pun pergi bersama mereka. Namun ketika Ia tidak jauh lagi dari rumah perwira itu, perwira tersebut menyuruh sahabat-sahabatnya untuk mengatakan: 'Tuan, janganlah bersusah-susah, sebab aku tidak layak menerima Tuan di dalam rumahku; sebab itu aku juga menganggap diriku tidak layak untuk datang kepada-Mu.'",
+        "'Tetapi katakan saja sepatah kata, maka hambaku itu akan sembuh. Sebab aku sendiri seorang bawahan, dan di bawahku ada pula prajurit. Jika aku berkata kepada salah seorang: Pergi! maka ia pergi, dan kepada seorang lagi: Datang! maka ia datang.'",
+        "Mendengar itu, Yesus heran akan dia. Ia berpaling kepada orang banyak dan berkata: 'Aku berkata kepadamu, iman sebesar ini tidak pernah Aku jumpai, sekalipun di antara orang Israel!' Dan ketika utusan itu kembali ke rumah, mereka mendapati hamba itu telah sehat kembali."
+      ],
+      "makna_inti": "Iman sejati tidak menuntut kehadiran fisik atau bukti langsung dari Tuhan. Perwira Romawi itu memahami otoritas Yesus atas penyakit layaknya otoritas militer; satu perintah saja sudah cukup.",
+      "decision": {
+        "scenario": "Kamu sedang mendoakan pergumulan yang besar, tetapi merasa Tuhan terasa sangat 'jauh' dan tidak ada tanda-tanda kehadiran-Nya secara fisik.",
+        "question": "Apa yang menjadi landasan imanmu?",
+        "options": [
+          {
+            "text": "Percaya bahwa firman Tuhan cukup untuk mengatasi segalanya, meski tanpa tanda fisik",
+            "correct": true,
+            "feedback": "Inilah jenis iman yang membuat Yesus takjub. Percaya pada otoritas firman-Nya di atas apa yang bisa kita lihat atau rasakan.",
+            "points": 10
+          },
+          {
+            "text": "Meminta Tuhan memberikan tanda khusus barulah aku percaya",
+            "correct": false,
+            "feedback": "Tuhan kadang memberi tanda, tapi iman yang paling dipuji adalah yang percaya hanya pada firman-Nya saja.",
+            "points": 3
+          },
+          {
+            "text": "Berhenti berharap karena Tuhan tidak terasa hadir",
+            "correct": false,
+            "feedback": "Jarak tidak membatasi kuasa Tuhan. Kuasa-Nya bekerja di luar batasan ruang dan waktu.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Apa alasan perwira Romawi itu melarang Yesus datang langsung ke rumahnya?",
+        "options": [
+          "Ia merasa dirinya tidak layak menerima Yesus",
+          "Ia sedang tidak ada di rumah",
+          "Ia takut kepada pemimpin Yahudi",
+          "Hambanya sudah terlanjur mati"
+        ],
+        "answer": "Ia merasa dirinya tidak layak menerima Yesus",
+        "insight": "Lukas 7:6-7 — Perwira ini sangat berkuasa secara duniawi, namun memiliki kerendahan hati yang luar biasa di hadapan Yesus. Kerendahan hati ini digabungkan dengan keyakinan penuh akan otoritas Yesus.",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Dalam hal apa kamu butuh Tuhan sekadar 'mengucapkan sepatah kata' saja atas masalahmu hari ini?",
+        "starter": "Satu firman Tuhan yang aku butuhkan saat ini adalah...",
+        "feedback_positive": "Mempercayakan masalahmu pada firman-Nya adalah bentuk penyerahan yang total.",
+        "points": 5
+      },
+      "reward": "Keyakinan Penuh",
+      "reward_message": "Kamu belajar bahwa iman yang kuat bersandar pada otoritas perkataan Tuhan, bukan sekadar kehadiran yang terlihat.",
+      "episode_closing": "\"Jarak dan waktu tunduk pada satu patah kata dari Sang Pencipta.\""
+    },
+     {
+      "id": 19,
+      "phase": "galilea",
+      "title": "Memberi Makan 4.000 Orang",
+      "subtitle": "Belas Kasih kepada Banyak Orang",
+      "verse": "Matius 15:32-39",
+      "level": 19,
+      "difficulty": "sedang",
+      "icon": "bakery_dining",
+      "image": "images/4000.jpg",
+      "category": "alam",
+      "story_parts": [
+        "Yesus merasa belas kasihan kepada orang banyak yang sudah tiga hari mengikuti-Nya tanpa makanan.",
+        "Murid-murid bertanya dari mana mereka mendapat roti.",
+        "Yesus bertanya, 'Berapa roti yang ada padamu?' Mereka menjawab, 'Tujuh, dan sedikit ikan kecil.'",
+        "Yesus mengucap syukur, memecahkannya, dan semua orang makan sampai kenyang.",
+        "Ada sisa tujuh bakul penuh."
+      ],
+      "makna_inti": "Yesus selalu peduli pada kebutuhan fisik dan rohani kita. Ia menyediakan dengan melimpah dari apa yang kita serahkan kepada-Nya.",
+      "decision": {
+        "scenario": "Kamu melihat orang kelaparan tetapi kamu hanya punya sedikit.",
+        "question": "Apa tindakanmu?",
+        "options": [
+          {
+            "text": "Berbagi apa yang ada",
+            "correct": true,
+            "feedback": "Tuhan melipatgandakan yang sedikit.",
+            "points": 10
+          },
+          {
+            "text": "Menyimpannya sendiri",
+            "correct": false,
+            "feedback": "Kita dipanggil untuk berbagi.",
+            "points": 3
+          },
+          {
+            "text": "Menyuruh mereka pergi",
+            "correct": false,
+            "feedback": "Belas kasih harus disertai tindakan.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Berapa sisa bakul setelah 4000 orang makan?",
+        "options": [
+          "7",
+          "12",
+          "5",
+          "3"
+        ],
+        "answer": "7",
+        "insight": "Tujuh adalah angka kesempurnaan.",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Kapan Tuhan memeliharamu di saat kamu kekurangan?",
+        "starter": "Tuhan memelihara saat...",
+        "feedback_positive": "Sangat memberkati dan menguatkan iman.",
+        "points": 5
+      }
+    },
+    {
+      "id": 20,
+      "phase": "galilea",
+      "title": "Orang Buta di Betsaida",
+      "subtitle": "Penyembuhan yang Bertahap",
+      "verse": "Markus 8:22-26",
+      "level": 20,
+      "difficulty": "sedang",
+      "icon": "visibility",
+      "image": "images/butabetsaida.jpg",
+      "category": "penyembuhan",
+      "story_parts": [
+        "Orang membawa seorang buta di Betsaida kepada Yesus.",
+        "Yesus membawanya keluar kampung, meludahi matanya, dan meletakkan tangan-Nya.",
+        "Yesus bertanya apakah ia melihat sesuatu. Ia menjawab, 'Aku melihat orang berjalan seperti pohon.'",
+        "Yesus meletakkan tangan-Nya lagi.",
+        "Matanya sembuh sepenuhnya dan melihat segala sesuatu dengan jelas."
+      ],
+      "makna_inti": "Kadang karya Tuhan dalam hidup kita terjadi secara bertahap, bukan instan. Kita harus bersabar dan membiarkan-Nya menyelesaikan karya-Nya.",
+      "decision": {
+        "scenario": "Kamu berdoa untuk sesuatu tapi hanya melihat sedikit perubahan.",
+        "question": "Apa yang kamu lakukan?",
+        "options": [
+          {
+            "text": "Terus percaya dan membiarkan Tuhan menyelesaikan prosesnya",
+            "correct": true,
+            "feedback": "Proses adalah bagian dari rencana-Nya.",
+            "points": 10
+          },
+          {
+            "text": "Kecewa dan berhenti",
+            "correct": false,
+            "feedback": "Jangan menyerah di tengah jalan.",
+            "points": 3
+          },
+          {
+            "text": "Marah pada Tuhan",
+            "correct": false,
+            "feedback": "Tuhan punya waktu-Nya sendiri.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Seperti apa orang berjalan menurut orang buta itu pada tahap pertama?",
+        "options": [
+          "Pohon",
+          "Raksasa",
+          "Semut",
+          "Bayangan"
+        ],
+        "answer": "Pohon",
+        "insight": "Penglihatannya pulih secara bertahap.",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Adakah proses bertahap dalam hidupmu yang sedang Tuhan kerjakan?",
+        "starter": "Proses saya adalah...",
+        "feedback_positive": "Proses membuat kita menjadi lebih kuat dan percaya.",
+        "points": 5
+      }
     },
     {
       "id": 13,
@@ -829,7 +1080,12 @@
       },
       "quiz": {
         "question": "Berapa hari Lazarus sudah berada di dalam kubur ketika Yesus tiba?",
-        "options": ["4 hari", "3 hari", "2 hari", "1 hari"],
+        "options": [
+          "4 hari",
+          "3 hari",
+          "2 hari",
+          "1 hari"
+        ],
         "answer": "4 hari",
         "insight": "Yohanes 11:17 — Empat hari penting secara kultural: tradisi Yahudi percaya roh melayang di sekitar tubuh selama tiga hari, lalu pergi. Dengan menunggu empat hari, Yesus menghilangkan semua keraguan — ini benar-benar kebangkitan dari kematian, bukan pemulihan dari pingsan.",
         "points_correct": 10,
@@ -845,198 +1101,562 @@
       "reward_message": "Kamu belajar bahwa Yesus bukan hanya dapat membangkitkan — Ia adalah sumber kehidupan itu sendiri.",
       "episode_closing": "\"Bahkan di depan kubur pun, Yesus berdiri dan berseru: Ke marilah!\""
     },
-    {
-      "id": 14,
-      "phase": "yerusalem",
-      "title": "Penyembuhan Telinga Makhus",
-      "subtitle": "Kasih di Momen Pengkhianatan",
-      "verse": "Lukas 22:50-51 · Yohanes 18:10",
-      "level": 14,
-      "difficulty": "sulit",
-      "icon": "hearing",
-      "image": "images/makhus.jpg",
-      "category": "penyembuhan",
-      "story_parts": [
-        "Malam itu adalah malam yang paling gelap. Di Taman Getsemani, Yesus baru saja selesai berdoa — keringat-Nya seperti titik darah yang jatuh ke tanah. Yudas datang dengan sepasukan tentara dan petugas bait Allah, membawa obor, lampu, dan senjata.",
-        "Yudas mendekati Yesus dan menciumnya — tanda yang telah disepakati dengan para penangkap. 'Rabi,' kata Yudas. Pengkhianatan dikemas dalam sapaan yang paling akrab.",
-        "Simon Petrus, yang selama ini bersumpah tidak akan pernah meninggalkan Yesus, merespons dengan pedang. Ia menghunus pedang dan memotong telinga kanan Makhus, hamba Imam Besar.",
-        "Yesus segera berkata: 'Sudahlah, jangan lagi.' Lalu Ia mengulurkan tangan-Nya — tangan yang akan segera dibelenggu — dan menyentuh telinga Makhus. Telinga itu pulih seketika.",
-        "Di momen pengkhianatan-Nya sendiri, di detik-detik sebelum penangkapan, Yesus berhenti untuk menyembuhkan telinga musuh yang datang menangkap-Nya. Ini adalah mukjizat terakhir sebelum salib — dan ia adalah demonstrasi paling sempurna dari kasih yang Ia ajarkan: kasih kepada musuh."
-      ],
-      "makna_inti": "Di saat tersulit dalam hidup-Nya — pengkhianatan, penangkapan, ancaman kematian — Yesus masih memilih untuk menyembuhkan musuh-Nya. Kasih yang diajarkan-Nya bukan teori; itu adalah identitas-Nya yang tidak bisa dipisahkan bahkan dalam penderitaan terdalam.",
-      "decision": {
-        "scenario": "Seseorang telah menyakiti kamu — mengkhianati, berbohong, melukai. Di saat kamu paling terluka, ada kesempatan untuk membalas atau untuk mengampuni.",
-        "question": "Apa yang kamu pilih?",
-        "options": [
-          {
-            "text": "Memilih untuk mengampuni dan bahkan menolong — bukan karena mudah, tapi karena itulah kasih Kristus",
-            "correct": true,
-            "feedback": "Yesus melakukan ini di momen yang paling tidak memungkinkan — ketika Ia sedang dikhianati, ditangkap, dan akan dibunuh. Kasih kepada musuh bukan perasaan — ia adalah keputusan yang mengandalkan kekuatan Roh, bukan kekuatan daging.",
-            "points": 10
-          },
-          {
-            "text": "Membela diri seperti Petrus — kadang pembalasan adalah respons yang wajar",
-            "correct": false,
-            "feedback": "Yesus menghentikan Petrus: 'Masukkan pedangmu.' Pembalasan adalah respons yang manusiawi dan bisa dimengerti. Namun jalan Yesus selalu melampaui respons manusiawi. Kuasa sejati adalah menolak untuk membalas.",
-            "points": 3
-          },
-          {
-            "text": "Menjauh — mengampuni berarti membiarkan orang lain menyakitimu terus",
-            "correct": false,
-            "feedback": "Mengampuni tidak berarti tidak ada konsekuensi atau memperbolehkan perlakuan buruk. Yesus tetap membiarkan proses penangkapan berjalan — namun hatinya tetap penuh kasih, bukan kebencian.",
-            "points": 3
-          }
-        ]
-      },
-      "quiz": {
-        "question": "Siapa yang memotong telinga Makhus, dan siapa Makhus itu?",
-        "options": [
-          "Petrus yang memotong; Makhus adalah hamba Imam Besar",
-          "Yohanes yang memotong; Makhus adalah prajurit Romawi",
-          "Yakobus yang memotong; Makhus adalah perwira tentara",
-          "Andreas yang memotong; Makhus adalah kepala sinagoge"
-        ],
-        "answer": "Petrus yang memotong; Makhus adalah hamba Imam Besar",
-        "insight": "Hanya Injil Yohanes (18:10) yang menyebutkan nama Petrus sebagai pelaku dan Makhus sebagai korban. Hanya Injil Lukas (22:51) yang mencatat bahwa Yesus menyembuhkan telinga itu. Dua Injil saling melengkapi untuk mengungkapkan mukjizat kasih ini.",
-        "points_correct": 10,
-        "points_partial": 3
-      },
-      "reflection": {
-        "prompt": "Siapa 'Makhus' dalam hidupmu — orang yang pernah atau sedang 'menangkap' atau menyakitimu? Apa yang akan Yesus lakukan jika Ia ada di posisimu, dan bagaimana kamu bisa melakukan hal yang sama?",
-        "starter": "Seseorang yang pernah menyakitiku dan sulit kuampuni adalah...",
-        "feedback_positive": "Mengakui sulitnya mengampuni adalah tanda kejujuran yang berani. Dan kejujuran itulah awal dari pemulihan.",
-        "points": 5
-      },
-      "reward": "Pengampunan",
-      "reward_message": "Kamu belajar bahwa kasih sejati tidak mengenal momen yang 'tidak tepat' — bahkan di detik pengkhianatan sekalipun.",
-      "episode_closing": "\"Tangan yang akan dipaku itu, terlebih dahulu memulihkan telinga musuh yang datang menangkap-Nya.\""
-    },
+
     {
       "id": 15,
       "phase": "yerusalem",
-      "title": "Tangkapan Ikan yang Kedua",
-      "subtitle": "Pemulihan Setelah Kegagalan",
-      "verse": "Yohanes 21:1-14",
+      "title": "Yesus Mengutuk Pohon Ara",
+      "subtitle": "Iman yang Tidak Berbuah",
+      "verse": "Matius 21:18-22",
       "level": 15,
-      "difficulty": "sulit",
-      "icon": "sailing",
-      "image": "images/ikan2.jpg",
+      "difficulty": "sedang",
+      "icon": "park",
+      "image": "images/ara.jpg",
       "category": "alam",
       "story_parts": [
-        "Setelah kebangkitan Yesus, para murid berada dalam kebingungan. Apa yang harus mereka lakukan selanjutnya? Petrus akhirnya berkata: 'Aku pergi menangkap ikan.' Enam murid lainnya ikut. Mereka kembali ke kehidupan lama — kembali ke danau, kembali ke jala, kembali ke identitas lama mereka sebagai nelayan.",
-        "Mereka memancing semalaman dan tidak menangkap apa-apa. Fajar mulai menyingsing. Di tepi danau, ada seseorang yang berdiri — namun para murid tidak mengenali-Nya.",
-        "'Hai anak-anak, adakah kamu mempunyai lauk-pauk?' tanya suara itu. 'Tidak,' jawab mereka. 'Tebarkanlah jalamu di sebelah kanan perahu, maka akan kamu peroleh.' Mereka menebarkan — dan jala itu begitu penuh ikan sehingga mereka tidak dapat menariknya.",
-        "Yohanes berkata kepada Petrus: 'Itu Tuhan!' Dan Petrus, yang masih memikul rasa bersalah karena tiga kali menyangkal Yesus, langsung terjun ke dalam air dan berenang menuju tepi danau.",
-        "Di tepi danau, Yesus sudah menyiapkan sarapan — roti dan ikan di atas bara api. Ia berkata: 'Marilah dan sarapan.' Tidak ada teguran. Tidak ada tuduhan. Hanya undangan untuk makan bersama. 153 ekor ikan dalam jala yang tidak koyak — dan sarapan pagi di tepi danau bersama Tuhan yang bangkit."
+        "Yesus melihat pohon ara yang penuh daun.",
+        "Namun tidak ada buah di dalamnya.",
+        "Yesus mengutuk pohon itu.",
+        "Pohon itu langsung menjadi kering.",
+        "Para murid terkejut melihatnya."
       ],
-      "makna_inti": "Yesus tidak menegur para murid yang 'kembali ke kehidupan lama.' Ia menemui mereka di sana — di tempat mereka — dan memulihkan mereka. Kasih karunia Allah tidak menghukum orang yang gagal dan mundur; Ia mengejar, menemui, dan memulihkan mereka dengan sarapan pagi.",
+      "makna_inti": "Iman bukan hanya tampilan luar — harus menghasilkan buah nyata.",
       "decision": {
-        "scenario": "Kamu pernah berkomitmen kepada Tuhan — namun kemudian jatuh, mundur, kembali ke kebiasaan lama. Kamu merasa terlalu malu untuk kembali.",
+        "scenario": "Kamu terlihat rohani, tapi tidak ada perubahan nyata.",
         "question": "Apa yang kamu lakukan?",
         "options": [
           {
-            "text": "Kembali kepada Yesus — Ia yang pertama kali muncul di tepi danau untuk memulihkan, bukan menghukum",
+            "text": "Mulai bertumbuh dan berbuah",
             "correct": true,
-            "feedback": "Yesus tidak menunggu para murid kembali kepada-Nya — Ia yang datang kepada mereka. Ia yang menyiapkan sarapan. Ia yang mengundang mereka makan. Kasih karunia selalu mengambil inisiatif lebih dahulu.",
+            "feedback": "Iman sejati terlihat dari buah.",
             "points": 10
           },
           {
-            "text": "Tetap menjauh karena rasa maluku terlalu besar untuk dihadapi",
+            "text": "Tetap seperti biasa",
             "correct": false,
-            "feedback": "Petrus memiliki alasan yang jauh lebih kuat untuk menjauh — tiga kali penyangkalan Yesus di malam penangkapan. Namun ia justru yang pertama terjun ke air untuk menghampiri Yesus. Rasa malu tidak boleh menjadi tembok yang lebih tinggi dari kasih karunia.",
+            "feedback": "Tidak ada pertumbuhan.",
             "points": 3
           },
           {
-            "text": "Berjanji untuk tidak pernah gagal lagi sebelum kembali kepada Tuhan",
+            "text": "Pura-pura saja",
             "correct": false,
-            "feedback": "Yesus tidak meminta janji baru dari Petrus sebelum menyambutnya. Ia bertanya: 'Apakah engkau mengasihi Aku?' — bukan 'Apakah kamu berjanji tidak akan gagal lagi?' Pemulihan dimulai dari kasih, bukan dari janji.",
+            "feedback": "Itu tidak nyata.",
             "points": 3
           }
         ]
       },
       "quiz": {
-        "question": "Berapa banyak ikan yang tertangkap dalam tangkapan ajaib kedua ini?",
-        "options": ["153 ekor", "120 ekor", "72 ekor", "500 ekor"],
-        "answer": "153 ekor",
-        "insight": "Yohanes 21:11 — Angka 153 disebutkan dengan sangat spesifik, menunjukkan ini adalah ingatan saksi mata yang akurat. Para ahli percaya 153 mewakili jumlah spesies ikan yang dikenal di dunia kuno — simbol kelengkapan misi menjangkau semua bangsa.",
+        "question": "Apa yang terjadi pada pohon itu?",
+        "options": [
+          "Kering",
+          "Berbuah",
+          "Tumbuh",
+          "Hijau"
+        ],
+        "answer": "Kering",
+        "insight": "Pohon itu langsung kering sebagai tanda.",
         "points_correct": 10,
         "points_partial": 3
       },
       "reflection": {
-        "prompt": "Di mana dalam hidupmu kamu 'kembali menangkap ikan' — mundur ke zona nyaman lama atau menjauhi panggilan Tuhan karena kegagalan? Bagaimana kamu mendengar undangan Yesus: 'Marilah dan sarapan'?",
-        "starter": "Cara aku 'kembali menangkap ikan' adalah...",
-        "feedback_positive": "Mengakui kemunduran adalah langkah pertama menuju pemulihan yang Yesus tawarkan.",
+        "prompt": "Apakah hidupmu menghasilkan buah?",
+        "starter": "Saat ini saya...",
+        "feedback_positive": "Refleksi membantu pertumbuhan.",
         "points": 5
-      },
-      "reward": "Pemulihan",
-      "reward_message": "Kamu belajar bahwa Yesus yang bangkit tidak datang untuk menghukum — Ia datang untuk memulihkan dan menyiapkan sarapan.",
-      "episode_closing": "\"Di tepi setiap kegagalanmu, Yesus sudah menyalakan api dan menyiapkan makan pagi.\""
+      }
     },
     {
       "id": 16,
       "phase": "yerusalem",
-      "title": "Kebangkitan Yesus",
-      "subtitle": "Kemenangan Atas Maut",
-      "verse": "Matius 28:1-10 · Yohanes 20:1-18",
+      "title": "Koin di Mulut Ikan",
+      "subtitle": "Pemeliharaan Tuhan",
+      "verse": "Matius 17:24-27",
       "level": 16,
-      "difficulty": "sulit",
-      "icon": "wb_sunny",
-      "image": "images/kebangkitan.jpg",
-      "category": "kebangkitan",
+      "difficulty": "sedang",
+      "icon": "payments",
+      "image": "images/koin.jpg",
+      "category": "alam",
       "story_parts": [
-        "Hari Minggu pagi buta. Tiga hari telah berlalu sejak salib. Semua harapan para murid tampaknya telah dikubur bersama Yesus. Beberapa perempuan — Maria Magdalena, Maria ibu Yakobus, dan Salome — pergi ke kubur membawa rempah-rempah untuk meminyaki jenazah. Perjalanan itu perjalanan duka, bukan perjalanan harapan.",
-        "Namun ketika mereka tiba, batu penutup kubur sudah terguling. Malaikat duduk di atas batu itu berpakaian putih seperti salju. Para penjaga jatuh seperti orang mati ketakutan. Malaikat berkata kepada perempuan-perempuan itu: 'Janganlah kamu takut; sebab aku tahu kamu mencari Yesus yang tersalib itu. Ia tidak ada di sini, sebab Ia telah bangkit, sama seperti yang telah dikatakan-Nya.'",
-        "Kubur itu kosong. Hanya kain kafan yang terlipat rapi — tanda yang tidak meninggalkan ruang untuk tafsir lain. Di luar logika, di luar harapan, di luar semua yang bisa dijelaskan: Yesus bangkit dari kematian.",
-        "Maria Magdalena, yang tinggal di dekat kubur sambil menangis, melihat seseorang yang dikiranya tukang kebun. 'Perempuan, mengapa engkau menangis? Siapa yang engkau cari?' tanya orang itu. Maria masih dalam duka menjawab tentang Yesus. Lalu Ia berkata satu kata: 'Maria.' Dan ia mengenal suara-Nya.",
-        "Yesus menyebut namanya — dan dalam satu kata, seluruh kematian, kesedihan, dan keputusasaan runtuh. Ia hidup. Ia mengenal namanya. Ia mencarinya. 'Pergilah dan katakanlah kepada saudara-saudara-Ku...' Berita terbesar sepanjang sejarah pertama kali dipercayakan kepada seorang perempuan yang dianggap tidak penting oleh dunia."
+        "Petrus diminta membayar pajak.",
+        "Yesus menyuruhnya memancing.",
+        "Ikan pertama berisi koin.",
+        "Koin itu cukup untuk membayar.",
+        "Petrus taat dan mendapatkannya."
       ],
-      "makna_inti": "Kebangkitan Yesus bukan sekadar mukjizat tentang hidup setelah mati — ia adalah pernyataan bahwa kematian, dosa, dan kegelapan tidak memiliki kata terakhir. Setiap kubur yang tampaknya tertutup, setiap harapan yang tampaknya mati, setiap kehidupan yang tampaknya berakhir — Kebangkitan berkata: itu bukan akhirnya.",
+      "makna_inti": "Tuhan menyediakan dengan cara yang tak terduga.",
       "decision": {
-        "scenario": "Kabar Kebangkitan pertama kali datang kepada perempuan-perempuan itu di pagi yang gelap. Mereka harus memilih apakah akan percaya pada apa yang mereka dengar dan lihat, atau menyerah pada logika kematian.",
-        "question": "Di hadapan fakta Kebangkitan, apa pilihanmu?",
+        "scenario": "Kamu sedang kekurangan.",
+        "question": "Apa yang kamu lakukan?",
         "options": [
           {
-            "text": "Percaya bahwa Yesus benar-benar bangkit dan membiarkan kebenaran itu mengubah segalanya dalam hidupku",
+            "text": "Percaya Tuhan menyediakan",
             "correct": true,
-            "feedback": "Kebangkitan bukan hanya doktrin untuk dipercaya — ia adalah realitas yang mengubah cara kita memandang penderitaan, kematian, kegagalan, dan masa depan. 'Ia bangkit' mengubah segalanya.",
-            "points": 15
+            "feedback": "Tuhan setia.",
+            "points": 10
           },
           {
-            "text": "Tetap ragu — ini terlalu luar biasa untuk dipercaya begitu saja",
+            "text": "Panik",
             "correct": false,
-            "feedback": "Tomas juga ragu. Yesus tidak menghukumnya — Ia menunjukkan tangan dan sisi-Nya. Keraguan yang jujur lebih baik dari kepercayaan yang berpura-pura. Bawa keraguanmu kepada Yesus sendiri.",
-            "points": 4
+            "feedback": "Percaya lebih penting.",
+            "points": 3
           },
           {
-            "text": "Menganggap ini cerita simbolis, bukan kejadian nyata",
+            "text": "Putus asa",
             "correct": false,
-            "feedback": "Para murid bukan berkumpul untuk merayakan 'simbol' kebangkitan — mereka menyerahkan nyawa mereka karena meyakini Yesus benar-benar bangkit secara fisik. Kesaksian mereka mengubah sejarah dunia.",
-            "points": 4
+            "feedback": "Masih ada jalan.",
+            "points": 3
           }
         ]
       },
       "quiz": {
-        "question": "Siapakah orang pertama yang melihat Yesus setelah kebangkitan-Nya?",
-        "options": ["Maria Magdalena", "Petrus", "Yohanes", "Yakobus"],
-        "answer": "Maria Magdalena",
-        "insight": "Yohanes 20:16 — Yesus menyebut namanya: 'Maria.' Dalam dunia kuno di mana perempuan bukan saksi yang sah di pengadilan, Yesus memilih seorang perempuan sebagai saksi pertama kebangkitan-Nya. Ini adalah pernyataan tentang siapa yang dipandang berharga oleh Allah.",
+        "question": "Di mana koin ditemukan?",
+        "options": [
+          "Mulut ikan",
+          "Tanah",
+          "Dompet",
+          "Rumah"
+        ],
+        "answer": "Mulut ikan",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Apakah kamu percaya pemeliharaan Tuhan?",
+        "starter": "Saya percaya...",
+        "feedback_positive": "Iman itu percaya.",
+        "points": 5
+      }
+    },
+    {
+      "id": 17,
+      "phase": "yerusalem",
+      "title": "Sepuluh Orang Kusta",
+      "subtitle": "Syukur yang Sejati",
+      "verse": "Lukas 17:11-19",
+      "level": 17,
+      "difficulty": "sedang",
+      "icon": "healing",
+      "image": "images/kusta.jpg",
+      "category": "penyembuhan",
+      "story_parts": [
+        "Yesus menyembuhkan sepuluh orang kusta.",
+        "Namun hanya satu yang kembali.",
+        "Ia bersyukur kepada Yesus.",
+        "Yesus menegurnya.",
+        "Ia menerima keselamatan sejati."
+      ],
+      "makna_inti": "Syukur adalah tanda iman yang sejati.",
+      "decision": {
+        "scenario": "Kamu menerima berkat.",
+        "question": "Apa yang kamu lakukan?",
+        "options": [
+          {
+            "text": "Bersyukur kepada Tuhan",
+            "correct": true,
+            "feedback": "Syukur itu iman.",
+            "points": 10
+          },
+          {
+            "text": "Melupakan",
+            "correct": false,
+            "feedback": "Jangan jadi seperti sembilan.",
+            "points": 3
+          },
+          {
+            "text": "Menganggap biasa",
+            "correct": false,
+            "feedback": "Itu bukan sikap iman.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Berapa yang kembali?",
+        "options": [
+          "1",
+          "10",
+          "5",
+          "2"
+        ],
+        "answer": "1",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Apakah kamu sudah bersyukur hari ini?",
+        "starter": "Hari ini saya...",
+        "feedback_positive": "Syukur mengubah hati.",
+        "points": 5
+      }
+    },
+    {
+      "id": 18,
+      "phase": "yerusalem",
+      "title": "Orang Lumpuh di Betesda",
+      "subtitle": "Sembuh Setelah 38 Tahun",
+      "verse": "Yohanes 5:1-15",
+      "level": 18,
+      "difficulty": "sedang",
+      "icon": "accessible_forward",
+      "image": "images/betesda.jpg",
+      "category": "penyembuhan",
+      "story_parts": [
+        "Di Yerusalem, dekat Pintu Gerbang Domba, ada sebuah kolam bernama Betesda.",
+        "Banyak orang sakit berbaring di sana, menunggu air bergoncang karena dipercaya malaikat turun menyembuhkan mereka.",
+        "Ada seorang pria yang sudah sakit lumpuh selama 38 tahun.",
+        "Yesus melihatnya dan bertanya, 'Maukah engkau sembuh?'",
+        "Pria beralasan tidak ada yang menolongnya. Namun Yesus berkata, 'Bangunlah, angkatlah tilammu dan berjalanlah.' Seketika ia sembuh."
+      ],
+      "makna_inti": "Kuasa Yesus tidak bergantung pada ritual atau takhayul (seperti air bergoncang), melainkan pada firman-Nya. Ia mencari mereka yang sudah kehilangan harapan.",
+      "decision": {
+        "scenario": "Kamu sudah lama berjuang mengatasi kelemahan, dan merasa tidak ada yang mau menolongmu.",
+        "question": "Apa yang kamu lakukan?",
+        "options": [
+          {
+            "text": "Mendengar firman Yesus dan bangkit",
+            "correct": true,
+            "feedback": "Ketaatan membawa kesembuhan.",
+            "points": 10
+          },
+          {
+            "text": "Terus mengeluh",
+            "correct": false,
+            "feedback": "Mengeluh tidak merubah keadaan.",
+            "points": 3
+          },
+          {
+            "text": "Menunggu orang lain",
+            "correct": false,
+            "feedback": "Yesus sudah ada di hadapanmu.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Berapa lama orang di Betesda itu sakit?",
+        "options": [
+          "38 tahun",
+          "12 tahun",
+          "40 tahun",
+          "18 tahun"
+        ],
+        "answer": "38 tahun",
+        "insight": "Waktu yang sangat lama, menyoroti betapa besar mukjizat ini.",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Apa kelumpuhan rohani dalam hidupmu?",
+        "starter": "Saya merasa...",
+        "feedback_positive": "Keberanian untuk mengakui kelemahan adalah awal dari pemulihan.",
+        "points": 5
+      }
+    },
+   
+    {
+      "id": 21,
+      "phase": "yerusalem",
+      "title": "Perempuan yang Membungkuk",
+      "subtitle": "Dibebaskan pada Hari Sabat",
+      "verse": "Lukas 13:10-17",
+      "level": 21,
+      "difficulty": "sedang",
+      "icon": "elderly_woman",
+      "image": "images/bungkuk.jpg",
+      "category": "penyembuhan",
+      "story_parts": [
+        "Pada hari Sabat, Yesus mengajar di rumah ibadat.",
+        "Ada perempuan yang dirasuki roh sehingga bungkuk 18 tahun.",
+        "Yesus memanggilnya dan berkata, 'Hai ibu, penyakitmu telah sembuh.'",
+        "Yesus meletakkan tangan-Nya, dan perempuan itu seketika berdiri tegak dan memuliakan Allah.",
+        "Kepala rumah ibadat marah karena Yesus menyembuhkan pada hari Sabat, namun Yesus membela kebebasan perempuan itu."
+      ],
+      "makna_inti": "Kasih dan pembebasan manusia lebih penting dari pada aturan agama yang kaku. Yesus datang untuk membebaskan yang terikat.",
+      "decision": {
+        "scenario": "Aturan melarangmu berbuat baik di waktu tertentu.",
+        "question": "Apa pilihanmu?",
+        "options": [
+          {
+            "text": "Tetap berbuat baik",
+            "correct": true,
+            "feedback": "Kebaikan mengalahkan aturan kaku.",
+            "points": 10
+          },
+          {
+            "text": "Abaikan orang itu",
+            "correct": false,
+            "feedback": "Itu tidak berbelas kasih.",
+            "points": 3
+          },
+          {
+            "text": "Takut dihukum",
+            "correct": false,
+            "feedback": "Keberanian dibutuhkan.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Berapa lama perempuan itu bungkuk?",
+        "options": [
+          "18 tahun",
+          "12 tahun",
+          "38 tahun",
+          "7 tahun"
+        ],
+        "answer": "18 tahun",
+        "insight": "Waktu penderitaan yang lama dipatahkan dalam sekejap oleh Yesus.",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Pernahkah kamu memprioritaskan kasih di atas sebuah aturan yang kaku?",
+        "starter": "Pernah, ketika...",
+        "feedback_positive": "Sikap yang sangat meneladani kasih Kristus.",
+        "points": 5
+      }
+    },
+    {
+      "id": 22,
+      "phase": "yerusalem",
+      "title": "Orang Sakit Busung Air",
+      "subtitle": "Kebaikan di Rumah Farisi",
+      "verse": "Lukas 14:1-6",
+      "level": 22,
+      "difficulty": "sulit",
+      "icon": "water_drop",
+      "image": "images/busung.jpg",
+      "category": "penyembuhan",
+      "story_parts": [
+        "Yesus makan di rumah seorang pemimpin Farisi pada hari Sabat. Mereka mengamat-amati-Nya.",
+        "Tiba-tiba datang seorang yang sakit busung air (edema).",
+        "Yesus bertanya kepada para ahli Taurat, 'Bolehkah menyembuhkan pada hari Sabat?' Mereka diam.",
+        "Yesus memegang orang itu, menyembuhkannya, dan menyuruhnya pergi.",
+        "Yesus lalu berkata, 'Siapa yang tidak akan menarik anaknya atau lembunya yang jatuh ke sumur pada hari Sabat?' Mereka tidak dapat membantah."
+      ],
+      "makna_inti": "Melakukan hal yang benar tidak selalu mendapat persetujuan orang banyak, apalagi kelompok agamawi. Namun kebenaran dan kasih tidak bisa ditunda.",
+      "decision": {
+        "scenario": "Kamu diawasi oleh orang-orang yang mencari kesalahanmu.",
+        "question": "Bagaimana sikapmu saat harus menolong seseorang?",
+        "options": [
+          {
+            "text": "Tetap menolong tanpa ragu",
+            "correct": true,
+            "feedback": "Lakukan yang benar di mata Tuhan, bukan manusia.",
+            "points": 10
+          },
+          {
+            "text": "Menunda menolong",
+            "correct": false,
+            "feedback": "Kebutuhan mendesak jangan ditunda.",
+            "points": 3
+          },
+          {
+            "text": "Mencari aman",
+            "correct": false,
+            "feedback": "Yesus selalu mengutamakan kasih di atas kenyamanan diri-Nya.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Di rumah siapa Yesus menyembuhkan orang sakit busung air?",
+        "options": [
+          "Pemimpin Farisi",
+          "Nelayan",
+          "Pemungut Cukai",
+          "Imam Besar"
+        ],
+        "answer": "Pemimpin Farisi",
+        "insight": "Yesus tidak segan menunjukkan kebenaran dan kasih bahkan di kandang para penentang-Nya.",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Pernahkah kamu takut berbuat benar karena memikirkan pandangan orang lain?",
+        "starter": "Saya sering khawatir...",
+        "feedback_positive": "Keberanian melakukan hal yang benar selalu datang dari Tuhan.",
+        "points": 5
+      }
+    },
+    {
+      "id": 23,
+      "phase": "yerusalem",
+      "title": "Orang Buta Bartimeus",
+      "subtitle": "Iman yang Berseru-seru",
+      "verse": "Markus 10:46-52",
+      "level": 23,
+      "difficulty": "sedang",
+      "icon": "hearing",
+      "image": "images/bartimeus.jpg",
+      "category": "penyembuhan",
+      "story_parts": [
+        "Yesus dan murid-murid-Nya keluar dari Yerikho menuju Yerusalem.",
+        "Bartimeus, pengemis yang buta, duduk di pinggir jalan. Mendengar Yesus lewat, ia berseru, 'Yesus, Anak Daud, kasihanilah aku!'",
+        "Banyak orang menegurnya dan menyuruh diam. Tapi ia makin keras berseru.",
+        "Yesus berhenti dan menyuruh memanggilnya. Bartimeus melempar jubahnya dan berdiri.",
+        "Yesus bertanya, 'Apa yang kau kehendaki?' Ia menjawab, 'Rabuni, supaya aku dapat melihat!' Yesus berkata, 'Pergilah, imanmu telah menyelamatkan engkau.' Seketika ia melihat."
+      ],
+      "makna_inti": "Iman yang sejati tidak mudah dihentikan oleh rintangan atau pandangan orang lain. Ia berseru kepada Tuhan sampai dijawab.",
+      "decision": {
+        "scenario": "Orang-orang meremehkan doamu dan menyuruhmu menyerah.",
+        "question": "Apa tindakanmu?",
+        "options": [
+          {
+            "text": "Lebih sungguh-sungguh berdoa",
+            "correct": true,
+            "feedback": "Ketekunan menarik perhatian Yesus.",
+            "points": 10
+          },
+          {
+            "text": "Malu dan diam",
+            "correct": false,
+            "feedback": "Jangan biarkan dunia membungkam imanmu.",
+            "points": 3
+          },
+          {
+            "text": "Berhenti berharap",
+            "correct": false,
+            "feedback": "Harapan pada Yesus tidak pernah mengecewakan.",
+            "points": 3
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Apa yang dilemparkan Bartimeus sebelum mendatangi Yesus?",
+        "options": [
+          "Jubahnya",
+          "Uangnya",
+          "Tongkatnya",
+          "Makanannya"
+        ],
+        "answer": "Jubahnya",
+        "insight": "Melempar jubah adalah tanda bahwa ia siap meninggalkan masa lalunya dan diubahkan.",
+        "points_correct": 10,
+        "points_partial": 3
+      },
+      "reflection": {
+        "prompt": "Apa doamu yang belum terjawab namun terus kamu serukan kepada-Nya?",
+        "starter": "Doa saya adalah...",
+        "feedback_positive": "Teruslah berseru dengan iman, Ia mendengar seruanmu.",
+        "points": 5
+      }
+    },
+    {
+      "id": 24,
+      "phase": "yerusalem",
+      "title": "Kebangkitan Yesus",
+      "subtitle": "Puncak Mukjizat",
+      "verse": "Matius 28",
+      "level": 24,
+      "difficulty": "sulit",
+      "icon": "auto_awesome",
+      "image": "images/resurrection.jpg",
+      "category": "kuasa",
+      "story_parts": [
+        "Yesus disalibkan dan mati.",
+        "Ia dikuburkan.",
+        "Hari ketiga kubur kosong.",
+        "Yesus bangkit dari kematian.",
+        "Ia hidup untuk selamanya."
+      ],
+      "makna_inti": "Yesus menang atas maut — ini puncak semua mukjizat.",
+      "decision": {
+        "scenario": "Kamu kehilangan harapan.",
+        "question": "Apa yang kamu lakukan?",
+        "options": [
+          {
+            "text": "Percaya pada kebangkitan",
+            "correct": true,
+            "feedback": "Harapan baru ada.",
+            "points": 15
+          },
+          {
+            "text": "Menyerah",
+            "correct": false,
+            "feedback": "Masih ada harapan.",
+            "points": 5
+          },
+          {
+            "text": "Diam",
+            "correct": false,
+            "feedback": "Bangkitlah.",
+            "points": 5
+          }
+        ]
+      },
+      "quiz": {
+        "question": "Apa isi kubur Yesus?",
+        "options": [
+          "Kosong",
+          "Mayat",
+          "Batu",
+          "Gelap"
+        ],
+        "answer": "Kosong",
         "points_correct": 15,
         "points_partial": 5
       },
       "reflection": {
-        "prompt": "Kebangkitan Yesus berkata: 'Tidak ada yang terlalu mati untuk dibangkitkan.' Apa yang ingin kamu bawa ke kaki kubur yang kosong itu — mimpi yang mati, iman yang hilang, hubungan yang putus, harapan yang padam?",
-        "starter": "Yang ingin aku bawa ke kubur yang kosong itu adalah...",
-        "feedback_positive": "Membawa hal-hal yang 'mati' ke kaki Kebangkitan adalah tindakan iman yang paling dalam.",
-        "points": 8
-      },
-      "reward": "Kebangkitan",
-      "reward_message": "Kamu telah mencapai puncak perjalanan — menemukan bahwa Yesus adalah Kebangkitan dan Hidup, dan Ia mengenalmu dengan nama.",
-      "episode_closing": "\"Kubur itu kosong. Dan nama yang Ia sebut adalah namamu.\""
-    
-    
+        "prompt": "Apa arti kebangkitan bagi hidupmu?",
+        "starter": "Bagi saya...",
+        "feedback_positive": "Kebangkitan memberi harapan.",
+        "points": 10
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Kana",
+      "definition": "Kota kecil di wilayah Galilea tempat Yesus melakukan mukjizat pertama-Nya mengubah air menjadi anggur."
+    },
+    {
+      "term": "Galilea",
+      "definition": "Wilayah di bagian utara Israel tempat Yesus dibesarkan (Nazaret) dan banyak melakukan pelayanan serta pengajaran-Nya."
+    },
+    {
+      "term": "Yerusalem",
+      "definition": "Kota suci bagi orang Yahudi, pusat keagamaan tempat Bait Suci berada, serta lokasi penyaliban dan kebangkitan Yesus."
+    },
+    {
+      "term": "Pentahiran",
+      "definition": "Upacara penyucian secara ritual dalam tradisi agama Yahudi untuk membersihkan diri dari hal-hal yang dianggap najis."
+    },
+    {
+      "term": "Ahli Taurat",
+      "definition": "Para cendekiawan dan ahli hukum agama Yahudi yang bertugas menyalin, mempelajari, dan menafsirkan Kitab Suci (Hukum Taurat)."
+    },
+    {
+      "term": "Legion",
+      "definition": "Istilah militer Romawi untuk pasukan besar (3.000-6.000 prajurit). Dalam Injil, digunakan oleh roh jahat untuk menunjukkan jumlah mereka yang sangat banyak di dalam diri seseorang."
+    },
+    {
+      "term": "Talita kum",
+      "definition": "Frasa dalam bahasa Aram yang berarti \"Hai anak perempuan, bangunlah!\", yang diucapkan Yesus saat membangkitkan putri Yairus dari kematian."
+    },
+    {
+      "term": "Sabat",
+      "definition": "Hari istirahat bagi orang Yahudi (jatuh pada hari ketujuh atau Sabtu), yang melarang segala bentuk pekerjaan fisik berdasarkan Hukum Taurat."
+    },
+    {
+      "term": "Rabuni",
+      "definition": "Panggilan penuh hormat dalam bahasa Aram yang berarti \"Guruku yang agung\" atau \"Tuhanku\"."
+    },
+    {
+      "term": "Betesda",
+      "definition": "Nama sebuah kolam di Yerusalem dekat Pintu Gerbang Domba yang dipercaya memiliki khasiat penyembuhan oleh para orang sakit."
+    },
+    {
+      "term": "Siloam",
+      "definition": "Kolam di Yerusalem yang namanya berarti \"Yang Diutus\". Yesus menyuruh orang yang buta sejak lahir untuk membasuh matanya di kolam ini."
+    },
+    {
+      "term": "Farisi",
+      "definition": "Golongan elit agama Yahudi yang sangat ketat dan konservatif dalam memegang serta menjalankan Hukum Taurat secara harfiah beserta tradisi-tradisinya."
+    },
+    {
+      "term": "Bait Suci",
+      "definition": "Bangunan suci dan pusat ibadah utama orang Yahudi yang terletak di Yerusalem, dipandang sebagai tempat kediaman Allah di bumi."
     }
   ]
-
-  
 }
-
