@@ -844,12 +844,12 @@
       "episode_closing": "\"Mata yang paling buta bukanlah yang tidak bisa melihat — melainkan yang menolak untuk percaya.\""
     },
         {
-      "id": 14,
+      "id": 13,
       "phase": "galilea",
       "title": "Iman Seorang Perwira Romawi",
       "subtitle": "Sembuh dari Jarak Jauh",
       "verse": "Lukas 7:1-10",
-      "level": 14,
+      "level": 13,
       "difficulty": "sedang",
       "icon": "military_tech",
       "image": "images/perwira.jpg",
@@ -910,12 +910,12 @@
       "episode_closing": "\"Jarak dan waktu tunduk pada satu patah kata dari Sang Pencipta.\""
     },
      {
-      "id": 19,
+      "id": 14,
       "phase": "galilea",
       "title": "Memberi Makan 4.000 Orang",
       "subtitle": "Belas Kasih kepada Banyak Orang",
       "verse": "Matius 15:32-39",
-      "level": 19,
+      "level": 14,
       "difficulty": "sedang",
       "icon": "bakery_dining",
       "image": "images/4000.jpg",
@@ -970,15 +970,18 @@
         "starter": "Tuhan memelihara saat...",
         "feedback_positive": "Sangat memberkati dan menguatkan iman.",
         "points": 5
-      }
+      },
+      "reward": "Pemeliharaan",
+"reward_message": "Kamu belajar bahwa Yesus peduli pada kebutuhan fisikmu dan menyediakan kelimpahan bagi mereka yang mengikuti-Nya.",
+"episode_closing": "\"Tuhan tidak hanya memberikan apa yang kita butuhkan, tapi Ia memberikan dengan melimpah.\""
     },
     {
-      "id": 20,
+      "id": 15,
       "phase": "galilea",
       "title": "Orang Buta di Betsaida",
       "subtitle": "Penyembuhan yang Bertahap",
       "verse": "Markus 8:22-26",
-      "level": 20,
+      "level": 15,
       "difficulty": "sedang",
       "icon": "visibility",
       "image": "images/butabetsaida.jpg",
@@ -1033,15 +1036,18 @@
         "starter": "Proses saya adalah...",
         "feedback_positive": "Proses membuat kita menjadi lebih kuat dan percaya.",
         "points": 5
-      }
+      },
+      "reward": "Kesabaran",
+"reward_message": "Kamu belajar bahwa terkadang Tuhan bekerja secara bertahap, dan setiap sentuhan-Nya membawa kita pada penglihatan yang lebih jelas.",
+"episode_closing": "\"Proses Tuhan mungkin bertahap, namun hasilnya selalu sempurna.\""
     },
     {
-      "id": 13,
+      "id": 16,
       "phase": "yerusalem",
       "title": "Lazarus Dibangkitkan",
       "subtitle": "Akulah Kebangkitan dan Hidup",
       "verse": "Yohanes 11:1-44",
-      "level": 13,
+      "level": 16,
       "difficulty": "sulit",
       "icon": "light_mode",
       "image": "images/lazarus.jpg",
@@ -1103,12 +1109,12 @@
     },
 
     {
-      "id": 15,
+      "id": 17,
       "phase": "yerusalem",
       "title": "Yesus Mengutuk Pohon Ara",
       "subtitle": "Iman yang Tidak Berbuah",
       "verse": "Matius 21:18-22",
-      "level": 15,
+      "level": 17,
       "difficulty": "sedang",
       "icon": "park",
       "image": "images/ara.jpg",
@@ -1163,15 +1169,18 @@
         "starter": "Saat ini saya...",
         "feedback_positive": "Refleksi membantu pertumbuhan.",
         "points": 5
-      }
+      },
+      "reward": "Pertumbuhan",
+"reward_message": "Kamu belajar bahwa iman yang hidup adalah iman yang menghasilkan buah nyata dalam tindakan dan karakter.",
+"episode_closing": "\"Jangan hanya terlihat hidup, pastikan imanmu berbuah bagi sesama.\""
     },
     {
-      "id": 16,
+      "id": 18,
       "phase": "yerusalem",
       "title": "Koin di Mulut Ikan",
       "subtitle": "Pemeliharaan Tuhan",
       "verse": "Matius 17:24-27",
-      "level": 16,
+      "level": 18,
       "difficulty": "sedang",
       "icon": "payments",
       "image": "images/koin.jpg",
@@ -1225,15 +1234,18 @@
         "starter": "Saya percaya...",
         "feedback_positive": "Iman itu percaya.",
         "points": 5
-      }
+      },
+      "reward": "Penyediaan",
+"reward_message": "Kamu belajar bahwa Tuhan memiliki cara-cara kreatif dan tak terduga untuk mencukupkan segala kebutuhanmu.",
+"episode_closing": "\"Ketaatan sederhana seringkali menjadi kunci bagi pemeliharaan Tuhan yang ajaib.\""
     },
     {
-      "id": 17,
+      "id": 19,
       "phase": "yerusalem",
       "title": "Sepuluh Orang Kusta",
       "subtitle": "Syukur yang Sejati",
       "verse": "Lukas 17:11-19",
-      "level": 17,
+      "level": 19,
       "difficulty": "sedang",
       "icon": "healing",
       "image": "images/kusta.jpg",
@@ -1287,15 +1299,18 @@
         "starter": "Hari ini saya...",
         "feedback_positive": "Syukur mengubah hati.",
         "points": 5
-      }
+      },
+      "reward": "Syukur",
+"reward_message": "Kamu belajar bahwa syukur bukan sekadar sopan santun rohani, melainkan pintu menuju keintiman yang lebih dalam dengan Yesus.",
+"episode_closing": "\"Satu ucapan syukur lebih berharga di mata Tuhan daripada seribu permintaan tanpa hati.\""
     },
     {
-      "id": 18,
+      "id": 20,
       "phase": "yerusalem",
       "title": "Orang Lumpuh di Betesda",
       "subtitle": "Sembuh Setelah 38 Tahun",
       "verse": "Yohanes 5:1-15",
-      "level": 18,
+      "level": 20,
       "difficulty": "sedang",
       "icon": "accessible_forward",
       "image": "images/betesda.jpg",
@@ -1350,7 +1365,10 @@
         "starter": "Saya merasa...",
         "feedback_positive": "Keberanian untuk mengakui kelemahan adalah awal dari pemulihan.",
         "points": 5
-      }
+      },
+      "reward": "Pengharapan Baru",
+"reward_message": "Kamu belajar bahwa tidak ada kata terlambat bagi Tuhan untuk memulihkan kondisi yang sudah bertahun-tahun terasa mustahil.",
+"episode_closing": "\"Firman-Nya sanggup membangkitkanmu dari kelumpuhan harapan yang paling lama sekalipun.\""
     },
    
     {
@@ -1414,7 +1432,10 @@
         "starter": "Pernah, ketika...",
         "feedback_positive": "Sikap yang sangat meneladani kasih Kristus.",
         "points": 5
-      }
+      },
+      "reward": "Kebebasan",
+"reward_message": "Kamu belajar bahwa kasih Tuhan membebaskanmu dari beban masa lalu yang membuatmu tertunduk.",
+"episode_closing": "\"Di dalam Yesus, kamu tidak lagi perlu berjalan dengan beban yang berat. Tegaklah!\""
     },
     {
       "id": 22,
@@ -1477,7 +1498,10 @@
         "starter": "Saya sering khawatir...",
         "feedback_positive": "Keberanian melakukan hal yang benar selalu datang dari Tuhan.",
         "points": 5
-      }
+      },
+      "reward": "Integritas",
+"reward_message": "Kamu belajar untuk mengutamakan belas kasih di atas aturan manusia, sama seperti yang Yesus teladankan.",
+"episode_closing": "\"Melakukan kebaikan tidak pernah salah, apa pun waktunya.\""
     },
     {
       "id": 23,
@@ -1540,7 +1564,10 @@
         "starter": "Doa saya adalah...",
         "feedback_positive": "Teruslah berseru dengan iman, Ia mendengar seruanmu.",
         "points": 5
-      }
+      },
+      "reward": "Ketekunan",
+"reward_message": "Kamu belajar bahwa seruan iman yang sungguh-sungguh tidak akan pernah dilewati begitu saja oleh Yesus.",
+"episode_closing": "\"Iman yang terus berseru akan selalu menemukan jawaban di dalam Yesus.\""
     },
     {
       "id": 24,
@@ -1602,7 +1629,10 @@
         "starter": "Bagi saya...",
         "feedback_positive": "Kebangkitan memberi harapan.",
         "points": 10
-      }
+      },
+      "reward": "Kemenangan",
+"reward_message": "Kamu telah mencapai puncak iman: percaya bahwa maut telah dikalahkan dan Yesus hidup selamanya di dalammu.",
+"episode_closing": "\"Sebab Ia hidup, ada hari esok yang cerah bagi kita semua.\""
     }
   ],
   "glossary": [
