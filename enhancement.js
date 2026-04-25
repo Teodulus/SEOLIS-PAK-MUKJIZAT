@@ -1,7 +1,7 @@
 /* ================================================================
    ENHANCEMENT.JS — Visual Storytelling Scene-Based System
    SOMIRACLE v4.3 — FIX IMAGE PATH & CACHE BUG
-   Fitur: scene per story_parts, fade crossf ade, animasi, TTS lengkap
+   Fitur: scene per story_parts, fade crossfade, animasi, TTS lengkap
    ================================================================ */
 
 // ═══════════════════════════════════════════════════════════════
@@ -340,7 +340,7 @@ function buildSceneUI(miracle) {
   wrapper.innerHTML =
     '<div id="scene-image-container">' +
       '<div id="scene-placeholder">' +
-        '<span class="material-symbols-outlined" id="scene-placeholder-icon" style="font-variation-settings:\'FILL\' 1">' + (miracle.icon || 'auto_stories') + '</span>' +
+        '<span class="material-symbols-outlined" id="scene-placeholder-icon" style="font-variation-settings:\"FILL\" 1">' + (miracle.icon || 'auto_stories') + '</span>' +
         '<span id="scene-placeholder-label">' + (miracle.title || 'Adegan') + '</span>' +
       '</div>' +
       '<img id="scene-img-current" src="" alt="Scene aktif" style="opacity:0;" />' +
@@ -397,6 +397,10 @@ function loadScene(miracle, sceneIdx, animate) {
 
   var badge = document.getElementById("scene-badge");
   if (badge) badge.textContent = "Adegan " + (sceneIdx+1) + " / " + totalScenes;
+  
+  // FIX: Update story-header-scene on every scene change
+  var headerScene = document.getElementById("story-header-scene");
+  if (headerScene) headerScene.textContent = "Adegan " + (sceneIdx+1) + " / " + totalScenes;
 
   document.querySelectorAll(".scene-dot").forEach(function(dot, i) {
     dot.classList.toggle("active", i === sceneIdx);
@@ -417,6 +421,9 @@ function loadScene(miracle, sceneIdx, animate) {
   } else {
     document.body.classList.remove("scene-last");
   }
+
+  // Inject VR for miracle 24 scene 5
+  window.injectVRScene(miracle, sceneIdx);
 
   if (!animate) {
     _applyImageDirect(miracle, imgUrl);
@@ -667,6 +674,148 @@ window.jumpToScene = function(sceneIdx) {
   loadScene(m, sceneIdx, true);
 };
 
+
+// ═══════════════════════════════════════════════════════════════
+// BAGIAN VR: WebAR Integration (Miracle 24 Scene 5)
+// ═══════════════════════════════════════════════════════════════
+(function setupVRButton() {
+  function doSetup() {
+    if (typeof appData === 'undefined' || !appData) { setTimeout(doSetup, 200); return; }
+    var origRenderStory = window.renderStory;
+    // VR check is done inside loadScene override below
+  }
+  doSetup();
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// BAGIAN FEEDBACK: Confetti & Haptic Feedback for Quiz/Decision
+// ═══════════════════════════════════════════════════════════════
+window.triggerCorrectFeedback = function() {
+  // Haptic feedback
+  if (navigator.vibrate) { try { navigator.vibrate([30, 20, 60]); } catch(e){} }
+  
+  // Confetti burst
+  if (typeof confetti === 'function') {
+    confetti({
+      particleCount: 80,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#1a56db', '#10b981', '#f59e0b', '#7c3aed', '#ffffff'],
+      zIndex: 9999
+    });
+    setTimeout(function() {
+      confetti({
+        particleCount: 40,
+        spread: 100,
+        origin: { x: 0.1, y: 0.7 },
+        colors: ['#60a5fa', '#34d399'],
+        zIndex: 9999
+      });
+      confetti({
+        particleCount: 40,
+        spread: 100,
+        origin: { x: 0.9, y: 0.7 },
+        colors: ['#fbbf24', '#a78bfa'],
+        zIndex: 9999
+      });
+    }, 200);
+  }
+};
+
+window.triggerWrongFeedback = function() {
+  // Haptic feedback for wrong
+  if (navigator.vibrate) { try { navigator.vibrate([80, 30, 80]); } catch(e){} }
+};
+
+// ═══════════════════════════════════════════════════════════════
+// BAGIAN SKELETON: Skeleton Loading Screen
+// ═══════════════════════════════════════════════════════════════
+(function setupSkeletonLoading() {
+  var loadingOverlay = document.getElementById("loading-overlay");
+  if (loadingOverlay) {
+    loadingOverlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;gap:20px;padding:24px;width:100%;max-width:400px;">' +
+      '<div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#1a56db22,#7c3aed22);display:flex;align-items:center;justify-content:center;">' +
+        '<div class="loader"></div>' +
+      '</div>' +
+      '<div style="font-family:Plus Jakarta Sans,sans-serif;font-size:1rem;font-weight:700;color:var(--primary)">Memuat Perjalanan...</div>' +
+      '<div style="width:100%;display:flex;flex-direction:column;gap:12px;">' +
+        [1,2,3].map(function(){ return '<div style="height:80px;border-radius:16px;background:var(--surface2);position:relative;overflow:hidden;">' +
+          '<div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);animation:shimmer 1.5s infinite;"></div>' +
+          '</div>'; }).join("") +
+      '</div>' +
+    '</div>';
+  }
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// BAGIAN LEARNING OBJECTIVES: Show per miracle before starting  
+// ═══════════════════════════════════════════════════════════════
+window.showMiracleLearningObjective = function(miracle, onContinue) {
+  var overlay = document.createElement("div");
+  overlay.style.cssText = "position:fixed;inset:0;background:rgba(15,23,42,0.8);backdrop-filter:blur(10px);z-index:99999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;padding:20px;";
+  
+  var obj = miracle.learning_objectives || [];
+  var pedagogical = (typeof pedagogicalMapping !== 'undefined' && pedagogicalMapping[miracle.id]) ? pedagogicalMapping[miracle.id] : null;
+  
+  overlay.innerHTML = '<div style="background:var(--surface);border-radius:24px;padding:28px;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:pop 0.4s cubic-bezier(.34,1.56,.64,1) both;">' +
+    '<div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">' +
+      '<div style="width:48px;height:48px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;">' +
+        '<span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;font-variation-settings:\"FILL\" 1;">flag</span>' +
+      '</div>' +
+      '<div><p class="font-sans text-xs font-bold" style="color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Tujuan Pembelajaran</p>' +
+      '<h3 class="font-sans font-bold" style="color:var(--on-bg);font-size:1.05rem;margin:0;">' + (miracle.title || "Mukjizat") + '</h3></div>' +
+    '</div>' +
+    (obj.length > 0 ? '<ul style="padding-left:20px;margin:0 0 16px;color:var(--on-surface);font-size:0.88rem;line-height:1.7;">' +
+      obj.map(function(o){ return '<li style="margin-bottom:6px;">' + o + '</li>'; }).join("") +
+    '</ul>' : '') +
+    (pedagogical ? '<div style="background:var(--surface2);padding:12px 16px;border-radius:12px;margin-bottom:16px;display:flex;align-items:center;gap:8px;">' +
+      '<span class="material-symbols-outlined" style="color:var(--primary);font-size:16px;">psychology</span>' +
+      '<div><p class="font-sans text-xs" style="color:var(--muted);margin:0;">Capaian Pembelajaran</p><p class="font-sans text-xs font-bold" style="color:var(--primary);margin:0;">' + pedagogical.cp + '</p></div></div>' : '') +
+    '<button onclick="this.closest(\'div[style]\').parentElement.click()" style="width:100%;padding:14px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;border:none;border-radius:14px;font-family:Plus Jakarta Sans,sans-serif;font-weight:700;font-size:0.95rem;cursor:pointer;">Mulai Perjalanan →</button>' +
+  '</div>';
+  
+  document.body.appendChild(overlay);
+  void overlay.offsetWidth;
+  overlay.style.opacity = "1";
+  
+  overlay.addEventListener("click", function(e) {
+    if (e.target === overlay || e.target.tagName === "BUTTON") {
+      overlay.style.opacity = "0";
+      setTimeout(function() { overlay.remove(); if (onContinue) onContinue(); }, 300);
+    }
+  });
+};
+
+// ═══════════════════════════════════════════════════════════════
+// BAGIAN VR IFRAME: Inject VR viewer untuk Mukjizat 24 Adegan 5
+// ═══════════════════════════════════════════════════════════════
+window._vrInjected = false;
+window.injectVRScene = function(miracle, sceneIdx) {
+  // Only for miracle id=24, scene index 4 (adegan 5)
+  if (miracle.id !== 24 || sceneIdx !== 4) {
+    var existingVr = document.getElementById("scene-vr-container");
+    if (existingVr) existingVr.style.display = "none";
+    return;
+  }
+  
+  var existing = document.getElementById("scene-vr-container");
+  if (existing) { existing.style.display = "block"; return; }
+  
+  var textArea = document.getElementById("scene-text-area");
+  if (!textArea) return;
+  
+  var vrDiv = document.createElement("div");
+  vrDiv.id = "scene-vr-container";
+  vrDiv.style.cssText = "margin-bottom:20px;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,0.2);";
+  vrDiv.innerHTML = '<div style="background:linear-gradient(135deg,#0c1b4d,#7c3aed);padding:12px 16px;display:flex;align-items:center;gap:8px;">' +
+    '<span class="material-symbols-outlined" style="color:white;font-size:20px;">view_in_ar</span>' +
+    '<span style="font-family:Plus Jakarta Sans,sans-serif;font-weight:700;font-size:0.9rem;color:white;">Pengalaman VR — Kebangkitan Yesus</span></div>' +
+    '<iframe src="https://mywebar.com/p/Project_0_e2lfm8gzo" width="100%" height="360" frameborder="0" allowfullscreen allow="camera; microphone; xr-spatial-tracking; gyroscope; accelerometer; magnetometer" style="display:block;background:#000;"></iframe>' +
+    '<div style="padding:10px 16px;background:var(--surface2);font-family:Plus Jakarta Sans,sans-serif;font-size:0.78rem;color:var(--muted);">💡 Gunakan headset VR atau sentuh layar untuk menjelajah pengalaman 360°</div>';
+  
+  textArea.parentNode.insertBefore(vrDiv, textArea);
+};
+
 // ═══════════════════════════════════════════════════════════════
 // BAGIAN 12: MENGAMBIL ALIH SIKLUS (HOOKS)
 // ═══════════════════════════════════════════════════════════════
@@ -691,6 +840,22 @@ window.jumpToScene = function(sceneIdx) {
       
       buildSceneUI(m);
       loadScene(m, 0, false);
+    };
+    
+    // Hook startMiracle to show learning objectives first
+    var origStartMiracle = window.startMiracle;
+    window.startMiracle = function(idx) {
+      if (typeof origStartMiracle === "function") {
+        var m = (typeof appData !== 'undefined' && appData && appData.miracles) ? appData.miracles[idx] : null;
+        if (m && (m.learning_objectives || (typeof pedagogicalMapping !== 'undefined' && pedagogicalMapping[m.id]))) {
+          // Run original first to set currentIdx and render
+          origStartMiracle.call(this, idx);
+          // Then show overlay on top
+          window.showMiracleLearningObjective(m, null);
+        } else {
+          origStartMiracle.call(this, idx);
+        }
+      }
     };
   }
   doHook();
