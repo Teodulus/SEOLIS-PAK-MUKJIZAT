@@ -1682,3 +1682,138 @@ function showSmartFeedback(isCorrect) {
     setTimeout(() => toast.remove(), 400);
   }, 3500);
 }
+
+// --- ASSESSMENT LOGIC (PRE-TEST & POST-TEST) ---
+let currentTestType = "pre"; // "pre" atau "post"
+let currentTestIdx = 0;
+let testScore = 0;
+let tempAnswers = [];
+
+function startPretest() {
+    currentTestType = "pre";
+    prepareTest();
+}
+
+function startPosttest() {
+    currentTestType = "post";
+    prepareTest();
+}
+
+function prepareTest() {
+    currentTestIdx = 0;
+    testScore = 0;
+    tempAnswers = [];
+    
+    // Update Header UI
+    const headerTitle = document.getElementById("test-header-title");
+    if (headerTitle) headerTitle.innerText = currentTestType === "pre" ? "Pre-Test" : "Post-Test";
+    
+    showScreen("screen-test");
+    renderTestQuestion();
+}
+
+function renderTestQuestion() {
+    const questions = appData.assessment_questions;
+    if (!questions) return;
+
+    const q = questions[currentTestIdx];
+    
+    // Update Progress
+    const progress = document.getElementById("test-progress");
+    if (progress) progress.innerText = `Pertanyaan ${currentTestIdx + 1} / ${questions.length}`;
+    
+    // Set Question
+    const qText = document.getElementById("test-question");
+    if (qText) qText.innerText = q.question;
+    
+    // Set Options
+    const optContainer = document.getElementById("test-options");
+    if (optContainer) {
+        optContainer.innerHTML = q.options.map((opt, i) => `
+            <button onclick="handleTestAnswer('${opt.replace(/'/g, "\\'")}')" class="option-card">
+                <div style="width:32px;height:32px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:0.8rem;color:var(--muted)">${String.fromCharCode(65+i)}</div>
+                <p class="font-sans font-semibold text-sm" style="color:var(--on-bg)">${opt}</p>
+            </button>
+        `).join("");
+    }
+}
+
+function handleTestAnswer(selected) {
+    const questions = appData.assessment_questions;
+    const correct = questions[currentTestIdx].answer;
+    
+    if (selected === correct) {
+        testScore++;
+    }
+    
+    if (currentTestIdx < questions.length - 1) {
+        currentTestIdx++;
+        renderTestQuestion();
+    } else {
+        finishTest();
+    }
+}
+
+function finishTest() {
+    const questions = appData.assessment_questions;
+    const finalScore = Math.round((testScore / questions.length) * 100);
+    
+    if (currentTestType === "pre") {
+        user.pretestDone = true;
+        user.pretestScore = finalScore;
+        
+        document.getElementById("test-result-title").innerText = "Hasil Pre-Test";
+        document.getElementById("test-comparison").classList.add("hidden");
+    } else {
+        user.posttestDone = true;
+        user.posttestScore = finalScore;
+        
+        document.getElementById("test-result-title").innerText = "Hasil Post-Test";
+        
+        // Tampilkan Perbandingan
+        const comp = document.getElementById("test-comparison");
+        if (comp) {
+            comp.classList.remove("hidden");
+            const improvement = finalScore - user.pretestScore;
+            comp.innerText = improvement >= 0 
+                ? `Peningkatan: +${improvement}% dari Pre-Test` 
+                : `Penurunan: ${improvement}% dari Pre-Test`;
+        }
+    }
+    
+    document.getElementById("test-score-display").innerText = finalScore;
+    saveUser();
+    showScreen("screen-test-result");
+}
+
+// Fungsi tombol lanjut di layar hasil tes
+function finishAssessment() {
+    if (currentTestType === "pre") {
+        showScreen("screen-home");
+        showCustomAlert("Perjalanan Dimulai", "Terima kasih telah menyelesaikan Pre-Test. Sekarang mari jelajahi mukjizat Yesus!", "explore");
+    } else {
+        showScreen("screen-home");
+    }
+}
+// Fungsi untuk mengecek apakah sudah tamat saat di layar Reward
+function finishRewardScreen() {
+    // Mengecek apakah ini mukjizat terakhir (ke-24) dan user belum pernah post-test
+    if (currentIdx === appData.miracles.length - 1 && !user.posttestDone) {
+        showCustomAlert(
+            "Perjalanan Selesai!", 
+            "Selamat! Anda telah menyelesaikan semua perjalanan mukjizat. Sekarang, mari kita lihat seberapa jauh pemahaman Anda berkembang melalui Post-Test.", 
+            "workspace_premium"
+        );
+        
+        // Menunggu 3.5 detik agar user bisa membaca alert, lalu otomatis masuk Post-Test
+        setTimeout(() => {
+            const closeBtn = document.querySelector("#btn-close-alert");
+            if (closeBtn) closeBtn.click(); // Menutup alert otomatis
+            startPosttest(); // Memulai Post-Test
+        }, 3500);
+        
+    } else {
+        // Jika belum tamat (mukjizat 1-23), kembali ke Peta Perjalanan seperti biasa
+        showScreen('screen-journey');
+    }
+}
