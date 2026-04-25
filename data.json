@@ -1688,5 +1688,64 @@
       "term": "Bait Suci",
       "definition": "Bangunan suci dan pusat ibadah utama orang Yahudi yang terletak di Yerusalem, dipandang sebagai tempat kediaman Allah di bumi."
     }
+  ],
+
+"assessment_questions": [
+    {
+      "id": 1,
+      "question": "Pada mukjizat pertama di Kana, apa pesan rohani utama dari tindakan Yesus mengubah air menjadi anggur?",
+      "options": [
+        "Yesus memprioritaskan pesta yang mewah",
+        "Yesus peduli pada hal kecil dan menjaga kehormatan manusia",
+        "Air sumur di Kana tidak layak minum",
+        "Maria memiliki kuasa menyuruh Yesus"
+      ],
+      "answer": "Yesus peduli pada hal kecil dan menjaga kehormatan manusia"
+    },
+    {
+      "id": 2,
+      "question": "Mengapa Yesus pertama-tama berkata 'Dosamu diampuni' kepada orang lumpuh yang diturunkan dari atap, sebelum menyembuhkan kakinya?",
+      "options": [
+        "Karena penyakit lumpuh selalu disebabkan oleh dosa",
+        "Untuk memancing kemarahan ahli Taurat",
+        "Karena kebutuhan terdalam manusia adalah pemulihan hubungan dengan Allah",
+        "Karena Yesus tidak bisa langsung menyembuhkan fisiknya"
+      ],
+      "answer": "Karena kebutuhan terdalam manusia adalah pemulihan hubungan dengan Allah"
+    },
+    {
+      "id": 3,
+      "question": "Dari kisah Yesus memberi makan 5000 orang, apa prinsip utama tentang kemurahan hati?",
+      "options": [
+        "Tunggu sampai kita kaya raya sebelum memberi",
+        "Sesuatu yang kecil di tangan kita menjadi kelimpahan di tangan Yesus",
+        "Hanya orang dewasa yang boleh mempersembahkan bekalnya",
+        "Yesus menciptakan makanan dari ruang hampa"
+      ],
+      "answer": "Sesuatu yang kecil di tangan kita menjadi kelimpahan di tangan Yesus"
+    },
+    {
+      "id": 4,
+      "question": "Ketika menyembuhkan sepuluh orang kusta, hanya satu yang kembali untuk berterima kasih. Siapakah orang tersebut?",
+      "options": [
+        "Seorang Imam Yahudi",
+        "Seorang Nelayan Galilea",
+        "Seorang Samaria",
+        "Seorang Ahli Taurat"
+      ],
+      "answer": "Seorang Samaria"
+    },
+    {
+      "id": 5,
+      "question": "Secara keseluruhan, mukjizat Yesus (menyembuhkan orang buta, lumpuh, kusta, membangkitkan orang mati) paling kuat menunjukkan bahwa Ia adalah...",
+      "options": [
+        "Tabib medis terbaik di zaman kuno",
+        "Pemimpin pemberontakan politik",
+        "Tuhan yang berkuasa penuh atas alam semesta, penyakit, dan maut",
+        "Seorang ahli sihir yang terkenal di Galilea"
+      ],
+      "answer": "Tuhan yang berkuasa penuh atas alam semesta, penyakit, dan maut"
+    }
   ]
+  
 }
