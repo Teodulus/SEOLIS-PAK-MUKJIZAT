@@ -166,6 +166,20 @@ async function loadData() {
     }
     appData = await response.json();
     
+    // Validate critical data fields
+    if (!appData || !Array.isArray(appData.miracles) || appData.miracles.length === 0) {
+      throw new Error("Data tidak valid: tidak ada mukjizat ditemukan.");
+    }
+    // Validate each miracle
+    appData.miracles.forEach((m, i) => {
+      if (!m.id) m.id = i + 1;
+      if (!m.title) m.title = `Mukjizat ${m.id}`;
+      if (!m.story_parts || !Array.isArray(m.story_parts)) m.story_parts = ["(Cerita belum tersedia)"];
+      if (!m.quiz) m.quiz = { question: "?", answer: "A", options: ["A","B","C","D"], insight: "", points_correct: 20, points_partial: 5 };
+      if (!m.decision) m.decision = { scenario: "", question: "Apa yang akan kamu lakukan?", options: [{text:"Percaya", correct:true, points:10, feedback:"Baik!"}] };
+      if (!m.reflection) m.reflection = { prompt: "Apa yang kamu pelajari?", points: 15, feedback_positive: "Terima kasih!" };
+    });
+    
     const loadingOverlay = document.getElementById("loading-overlay");
     if (loadingOverlay) loadingOverlay.style.display = "none";
     
@@ -181,7 +195,10 @@ async function loadData() {
     }
   } catch (e) {
     console.error("Kesalahan saat memuat data aplikasi:", e);
-    showCustomAlert("Gagal Memuat Data", "Gagal memuat data.json. Pastikan Anda menjalankan aplikasi ini menggunakan Local Server (seperti Live Server di VSCode), bukan diklik langsung dari folder.", "cloud_off", "error");
+    const errMsg = e.message && e.message.includes("tidak valid") 
+      ? e.message 
+      : "Gagal memuat data perjalanan. Pastikan koneksi internet aktif dan Anda menjalankan aplikasi melalui server lokal atau hosting.";
+    showCustomAlert("Gagal Memuat Data", errMsg, "cloud_off", "error");
   }
 }
 
@@ -701,6 +718,13 @@ function chooseDecision(idx) {
   });
 
   showSmartFeedback(opt.correct);
+  
+  // Trigger visual/haptic feedback
+  if (opt.correct) {
+    if (typeof window.triggerCorrectFeedback === "function") setTimeout(() => window.triggerCorrectFeedback(), 150);
+  } else {
+    if (typeof window.triggerWrongFeedback === "function") window.triggerWrongFeedback();
+  }
 
   if (opt.correct) {
     user.points += opt.points;
@@ -903,8 +927,16 @@ function checkAnswer(selected, isTimeout = false) {
 
   if (isCorrect) {
     user.points += quizRetry ? m.quiz.points_partial : m.quiz.points_correct;
+    // Trigger confetti + haptic for correct answer
+    if (typeof window.triggerCorrectFeedback === "function") {
+      setTimeout(() => window.triggerCorrectFeedback(), 100);
+    }
   } else {
     user.points += m.quiz.points_partial;
+    // Trigger haptic shake for wrong answer
+    if (typeof window.triggerWrongFeedback === "function") {
+      window.triggerWrongFeedback();
+    }
   }
 
   const optEl = document.getElementById("quiz-options");
@@ -1769,22 +1801,42 @@ function finishTest() {
         user.pretestDone = true;
         user.pretestScore = finalScore;
         
-        document.getElementById("test-result-title").innerText = "Hasil Pre-Test";
-        document.getElementById("test-comparison").classList.add("hidden");
+        const titleEl = document.getElementById("test-result-title");
+        if (titleEl) titleEl.innerText = "Hasil Pre-Test";
+        const compEl = document.getElementById("test-comparison");
+        if (compEl) compEl.classList.add("hidden");
     } else {
         user.posttestDone = true;
         user.posttestScore = finalScore;
         
-        document.getElementById("test-result-title").innerText = "Hasil Post-Test";
+        const titleElPost = document.getElementById("test-result-title");
+        if (titleElPost) titleElPost.innerText = "Hasil Post-Test";
         
-        // Tampilkan Perbandingan
+        // Tampilkan Perbandingan Skor Pre-Test vs Post-Test secara jelas
         const comp = document.getElementById("test-comparison");
         if (comp) {
             comp.classList.remove("hidden");
             const improvement = finalScore - user.pretestScore;
-            comp.innerText = improvement >= 0 
-                ? `Peningkatan: +${improvement}% dari Pre-Test` 
-                : `Penurunan: ${improvement}% dari Pre-Test`;
+            const sign = improvement >= 0 ? "+" : "";
+            comp.innerText = `📈 Peningkatan: ${sign}${improvement}% dari Pre-Test (${user.pretestScore}% → ${finalScore}%)`;
+            comp.style.color = improvement >= 0 ? "var(--success)" : "var(--error)";
+        }
+        
+        // Also show in post-test-comparison card (screen-assessment-result)
+        const postCard = document.getElementById("post-test-comparison");
+        const comparePre = document.getElementById("compare-pre");
+        const comparePost = document.getElementById("compare-post");
+        const compareMsg = document.getElementById("compare-msg");
+        if (postCard) postCard.style.display = "block";
+        if (comparePre) comparePre.textContent = user.pretestScore + "%";
+        if (comparePost) comparePost.textContent = finalScore + "%";
+        if (compareMsg) {
+            const diff = finalScore - user.pretestScore;
+            const sign = diff >= 0 ? "+" : "";
+            compareMsg.textContent = diff >= 0 
+                ? `🎉 Hebat! Pemahamanmu meningkat ${sign}${diff}% setelah perjalanan ini!`
+                : `💪 Teruslah belajar! Selisih ${diff}% adalah peluang untuk bertumbuh.`;
+            compareMsg.style.color = diff >= 0 ? "var(--success)" : "var(--accent)";
         }
     }
     
