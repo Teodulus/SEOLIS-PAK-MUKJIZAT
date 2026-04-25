@@ -1001,6 +1001,11 @@ body {
      REWARD
 ══════════════════════════════════════════ -->
 <div id="screen-reward" class="screen items-center justify-center px-5 py-8" style="background:var(--bg)">
+  <!-- Ubah onclick menjadi fungsi baru penentu arah -->
+    <button onclick="finishRewardScreen()" class="btn-primary fade-up d3">
+      Lanjutkan
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
   <div class="w-full max-w-md flex flex-col gap-4">
     <div class="reward-burst pop text-center">
       <div style="font-size:64px;margin-bottom:8px;" id="reward-emoji">🏆</div>
@@ -1392,7 +1397,7 @@ body {
     <p class="text-sm text-gray-500 mb-4">Skor awal kamu sebelum memulai perjalanan.</p>
     <div class="text-5xl font-black text-blue-600 mb-6" id="test-score-display">0/3</div>
     <p id="test-comparison" class="text-sm font-semibold text-green-600 mb-6 hidden"></p>
-    <button id="btn-finish-test" onclick="finishTest()" class="btn-primary">Mulai Perjalanan</button>
+    <button id="btn-finish-test" onclick="finishAssessment()" class="btn-primary">Mulai Perjalanan</button>
   </div>
 </div>
 
