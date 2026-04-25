@@ -1797,7 +1797,7 @@ function finishTest() {
 function finishAssessment() {
     if (currentTestType === "pre") {
         showScreen("screen-home");
-        showCustomAlert("Perjalanan Dimulai", "Terima kasih telah menyelesaikan  Pre-Test. Sekarang mari jelajahi mukjizat Yesus!", "explore");
+        showCustomAlert("Perjalanan Dimulai", "Terima kasih telah menyelesaikan Pre-Test. Sekarang mari jelajahi mukjizat Yesus!", "explore");
     } else {
         showScreen("screen-home");
     }
