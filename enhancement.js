@@ -1,7 +1,7 @@
 /* ================================================================
    ENHANCEMENT.JS — Visual Storytelling Scene-Based System
    SOMIRACLE v4.3 — FIX IMAGE PATH & CACHE BUG
-   Fitur: scene per story_parts, fade crossfade, animasi, TTS lengkap
+   Fitur: scene per story_parts, fade crossf ade, animasi, TTS lengkap
    ================================================================ */
 
 // ═══════════════════════════════════════════════════════════════
