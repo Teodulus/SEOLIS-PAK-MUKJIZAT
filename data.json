@@ -115,7 +115,11 @@
       },
       "reward": "Iman",
       "reward_message": "Kamu telah belajar bahwa iman berarti mempercayakan bahkan hal-hal kecil kepada Yesus.",
-      "episode_closing": "\"Setiap masalahmu, kecil maupun besar, adalah undangan untuk membiarkan Yesus bekerja.\""
+      "episode_closing": "\"Setiap masalahmu, kecil maupun besar, adalah undangan untuk membiarkan Yesus bekerja.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Air Menjadi Anggur"
+      ]
     },
     {
       "id": 2,
@@ -181,7 +185,11 @@
       },
       "reward": "Ketaatan",
       "reward_message": "Kamu belajar bahwa ketaatan yang sederhana kepada Yesus bisa menghasilkan panen yang luar biasa.",
-      "episode_closing": "\"Ketika Yesus berbicara, bahkan danau yang kosong pun menjadi penuh.\""
+      "episode_closing": "\"Ketika Yesus berbicara, bahkan danau yang kosong pun menjadi penuh.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Tangkapan Ikan yang Ajaib"
+      ]
     },
     {
       "id": 3,
@@ -247,7 +255,11 @@
       },
       "reward": "Damai",
       "reward_message": "Kamu belajar bahwa kehadiran Yesus bukan berarti absennya badai — melainkan jaminan kamu tidak sendirian.",
-      "episode_closing": "\"Satu kata dari Yesus cukup untuk menenangkan badai terbesarmu.\""
+      "episode_closing": "\"Satu kata dari Yesus cukup untuk menenangkan badai terbesarmu.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Yesus Meredakan Badai"
+      ]
     },
     {
       "id": 4,
@@ -313,7 +325,11 @@
       },
       "reward": "Keberanian",
       "reward_message": "Kamu belajar bahwa iman yang menatap Yesus mampu melampaui batas-batas manusia.",
-      "episode_closing": "\"Bahkan langkah iman yang goyah tetap lebih mulia dari diam di dalam perahu.\""
+      "episode_closing": "\"Bahkan langkah iman yang goyah tetap lebih mulia dari diam di dalam perahu.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Berjalan di Atas Air"
+      ]
     },
     {
       "id": 5,
@@ -379,7 +395,11 @@
       },
       "reward": "Kemurahan",
       "reward_message": "Kamu belajar bahwa pemberian kecil yang diserahkan kepada Yesus bisa memberi makan ribuan jiwa.",
-      "episode_closing": "\"Di tangan Yesus, tidak ada yang terlalu kecil untuk dipakai-Nya.\""
+      "episode_closing": "\"Di tangan Yesus, tidak ada yang terlalu kecil untuk dipakai-Nya.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Memberi Makan 5.000 Orang"
+      ]
     },
     {
       "id": 6,
@@ -445,7 +465,11 @@
       },
       "reward": "Persahabatan",
       "reward_message": "Kamu belajar bahwa iman terbaik adalah yang membawa orang lain — bukan hanya dirimu sendiri — kepada Yesus.",
-      "episode_closing": "\"Persahabatan sejati tidak berhenti di depan pintu yang tertutup.\""
+      "episode_closing": "\"Persahabatan sejati tidak berhenti di depan pintu yang tertutup.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Menyembuhkan Orang Lumpuh dari Atap"
+      ]
     },
     {
       "id": 7,
@@ -511,7 +535,11 @@
       },
       "reward": "Pemulihan",
       "reward_message": "Kamu belajar bahwa iman yang datang dalam kelemahan sekalipun disambut oleh Yesus dengan penuh kasih.",
-      "episode_closing": "\"Ujung jubah-Nya cukup untuk mengubah dua belas tahun penderitaan menjadi damai.\""
+      "episode_closing": "\"Ujung jubah-Nya cukup untuk mengubah dua belas tahun penderitaan menjadi damai.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Perempuan yang Menyentuh Jubah-Nya"
+      ]
     },
     {
       "id": 8,
@@ -577,7 +605,11 @@
       },
       "reward": "Syukur",
       "reward_message": "Kamu belajar bahwa syukur bukan sekadar sopan santun rohani, melainkan pintu menuju keintiman yang lebih dalam dengan Yesus.",
-      "episode_closing": "\"Sepuluh menerima mujizat. Satu menemukan lebih dari itu — ia menemukan Tuhan.\""
+      "episode_closing": "\"Sepuluh menerima mujizat. Satu menemukan lebih dari itu — ia menemukan Tuhan.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Sepuluh Orang Kusta"
+      ]
     },
     {
       "id": 9,
@@ -643,7 +675,11 @@
       },
       "reward": "Kebebasan",
       "reward_message": "Kamu belajar bahwa kuasa Yesus mampu membebaskan dari belenggu apapun yang dianggap mustahil oleh manusia.",
-      "episode_closing": "\"Tidak ada rantai yang cukup kuat untuk menahan seseorang dari kasih Yesus.\""
+      "episode_closing": "\"Tidak ada rantai yang cukup kuat untuk menahan seseorang dari kasih Yesus.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Legion: Orang yang Dibebaskan"
+      ]
     },
     {
       "id": 10,
@@ -709,7 +745,11 @@
       },
       "reward": "Harapan",
       "reward_message": "Kamu belajar bahwa 'sudah terlambat' bukan ada di kamus Yesus — setiap akhir adalah awal baru di tangan-Nya.",
-      "episode_closing": "\"Ketika semua orang meratap, Yesus masuk dan berkata: Bangunlah.\""
+      "episode_closing": "\"Ketika semua orang meratap, Yesus masuk dan berkata: Bangunlah.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Putri Yairus Dibangkitkan"
+      ]
     },
     {
       "id": 11,
@@ -775,7 +815,11 @@
       },
       "reward": "Kepekaan",
       "reward_message": "Kamu belajar bahwa belas kasih yang sejati tidak menunggu diminta — ia bergerak ketika melihat kebutuhan.",
-      "episode_closing": "\"Allah tidak menunggu doa sempurna. Ia cukup melihat air matamu untuk bergerak.\""
+      "episode_closing": "\"Allah tidak menunggu doa sempurna. Ia cukup melihat air matamu untuk bergerak.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Anak Janda di Nain"
+      ]
     },
     {
       "id": 12,
@@ -841,9 +885,13 @@
       },
       "reward": "Terang",
       "reward_message": "Kamu belajar bahwa Yesus bukan hanya memberi penglihatan fisik — Ia adalah Terang Dunia yang menerangi kegelapan jiwa.",
-      "episode_closing": "\"Mata yang paling buta bukanlah yang tidak bisa melihat — melainkan yang menolak untuk percaya.\""
+      "episode_closing": "\"Mata yang paling buta bukanlah yang tidak bisa melihat — melainkan yang menolak untuk percaya.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Orang yang Buta Sejak Lahir"
+      ]
     },
-        {
+    {
       "id": 13,
       "phase": "galilea",
       "title": "Iman Seorang Perwira Romawi",
@@ -907,9 +955,13 @@
       },
       "reward": "Keyakinan Penuh",
       "reward_message": "Kamu belajar bahwa iman yang kuat bersandar pada otoritas perkataan Tuhan, bukan sekadar kehadiran yang terlihat.",
-      "episode_closing": "\"Jarak dan waktu tunduk pada satu patah kata dari Sang Pencipta.\""
+      "episode_closing": "\"Jarak dan waktu tunduk pada satu patah kata dari Sang Pencipta.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Iman Seorang Perwira Romawi"
+      ]
     },
-     {
+    {
       "id": 14,
       "phase": "galilea",
       "title": "Memberi Makan 4.000 Orang",
@@ -972,8 +1024,12 @@
         "points": 5
       },
       "reward": "Pemeliharaan",
-"reward_message": "Kamu belajar bahwa Yesus peduli pada kebutuhan fisikmu dan menyediakan kelimpahan bagi mereka yang mengikuti-Nya.",
-"episode_closing": "\"Tuhan tidak hanya memberikan apa yang kita butuhkan, tapi Ia memberikan dengan melimpah.\""
+      "reward_message": "Kamu belajar bahwa Yesus peduli pada kebutuhan fisikmu dan menyediakan kelimpahan bagi mereka yang mengikuti-Nya.",
+      "episode_closing": "\"Tuhan tidak hanya memberikan apa yang kita butuhkan, tapi Ia memberikan dengan melimpah.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Memberi Makan 4.000 Orang"
+      ]
     },
     {
       "id": 15,
@@ -1038,8 +1094,12 @@
         "points": 5
       },
       "reward": "Kesabaran",
-"reward_message": "Kamu belajar bahwa terkadang Tuhan bekerja secara bertahap, dan setiap sentuhan-Nya membawa kita pada penglihatan yang lebih jelas.",
-"episode_closing": "\"Proses Tuhan mungkin bertahap, namun hasilnya selalu sempurna.\""
+      "reward_message": "Kamu belajar bahwa terkadang Tuhan bekerja secara bertahap, dan setiap sentuhan-Nya membawa kita pada penglihatan yang lebih jelas.",
+      "episode_closing": "\"Proses Tuhan mungkin bertahap, namun hasilnya selalu sempurna.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Orang Buta di Betsaida"
+      ]
     },
     {
       "id": 16,
@@ -1105,9 +1165,12 @@
       },
       "reward": "Kehidupan Kekal",
       "reward_message": "Kamu belajar bahwa Yesus bukan hanya dapat membangkitkan — Ia adalah sumber kehidupan itu sendiri.",
-      "episode_closing": "\"Bahkan di depan kubur pun, Yesus berdiri dan berseru: Ke marilah!\""
+      "episode_closing": "\"Bahkan di depan kubur pun, Yesus berdiri dan berseru: Ke marilah!\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Lazarus Dibangkitkan"
+      ]
     },
-
     {
       "id": 17,
       "phase": "yerusalem",
@@ -1171,8 +1234,12 @@
         "points": 5
       },
       "reward": "Pertumbuhan",
-"reward_message": "Kamu belajar bahwa iman yang hidup adalah iman yang menghasilkan buah nyata dalam tindakan dan karakter.",
-"episode_closing": "\"Jangan hanya terlihat hidup, pastikan imanmu berbuah bagi sesama.\""
+      "reward_message": "Kamu belajar bahwa iman yang hidup adalah iman yang menghasilkan buah nyata dalam tindakan dan karakter.",
+      "episode_closing": "\"Jangan hanya terlihat hidup, pastikan imanmu berbuah bagi sesama.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Yesus Mengutuk Pohon Ara"
+      ]
     },
     {
       "id": 18,
@@ -1227,7 +1294,8 @@
         ],
         "answer": "Mulut ikan",
         "points_correct": 10,
-        "points_partial": 3
+        "points_partial": 3,
+        "insight": "Pelajari lebih lanjut tentang mukjizat ini."
       },
       "reflection": {
         "prompt": "Apakah kamu percaya pemeliharaan Tuhan?",
@@ -1236,8 +1304,12 @@
         "points": 5
       },
       "reward": "Penyediaan",
-"reward_message": "Kamu belajar bahwa Tuhan memiliki cara-cara kreatif dan tak terduga untuk mencukupkan segala kebutuhanmu.",
-"episode_closing": "\"Ketaatan sederhana seringkali menjadi kunci bagi pemeliharaan Tuhan yang ajaib.\""
+      "reward_message": "Kamu belajar bahwa Tuhan memiliki cara-cara kreatif dan tak terduga untuk mencukupkan segala kebutuhanmu.",
+      "episode_closing": "\"Ketaatan sederhana seringkali menjadi kunci bagi pemeliharaan Tuhan yang ajaib.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Koin di Mulut Ikan"
+      ]
     },
     {
       "id": 19,
@@ -1292,7 +1364,8 @@
         ],
         "answer": "1",
         "points_correct": 10,
-        "points_partial": 3
+        "points_partial": 3,
+        "insight": "Pelajari lebih lanjut tentang mukjizat ini."
       },
       "reflection": {
         "prompt": "Apakah kamu sudah bersyukur hari ini?",
@@ -1301,8 +1374,12 @@
         "points": 5
       },
       "reward": "Syukur",
-"reward_message": "Kamu belajar bahwa syukur bukan sekadar sopan santun rohani, melainkan pintu menuju keintiman yang lebih dalam dengan Yesus.",
-"episode_closing": "\"Satu ucapan syukur lebih berharga di mata Tuhan daripada seribu permintaan tanpa hati.\""
+      "reward_message": "Kamu belajar bahwa syukur bukan sekadar sopan santun rohani, melainkan pintu menuju keintiman yang lebih dalam dengan Yesus.",
+      "episode_closing": "\"Satu ucapan syukur lebih berharga di mata Tuhan daripada seribu permintaan tanpa hati.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Sepuluh Orang Kusta"
+      ]
     },
     {
       "id": 20,
@@ -1367,10 +1444,13 @@
         "points": 5
       },
       "reward": "Pengharapan Baru",
-"reward_message": "Kamu belajar bahwa tidak ada kata terlambat bagi Tuhan untuk memulihkan kondisi yang sudah bertahun-tahun terasa mustahil.",
-"episode_closing": "\"Firman-Nya sanggup membangkitkanmu dari kelumpuhan harapan yang paling lama sekalipun.\""
+      "reward_message": "Kamu belajar bahwa tidak ada kata terlambat bagi Tuhan untuk memulihkan kondisi yang sudah bertahun-tahun terasa mustahil.",
+      "episode_closing": "\"Firman-Nya sanggup membangkitkanmu dari kelumpuhan harapan yang paling lama sekalipun.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Orang Lumpuh di Betesda"
+      ]
     },
-   
     {
       "id": 21,
       "phase": "yerusalem",
@@ -1434,8 +1514,12 @@
         "points": 5
       },
       "reward": "Kebebasan",
-"reward_message": "Kamu belajar bahwa kasih Tuhan membebaskanmu dari beban masa lalu yang membuatmu tertunduk.",
-"episode_closing": "\"Di dalam Yesus, kamu tidak lagi perlu berjalan dengan beban yang berat. Tegaklah!\""
+      "reward_message": "Kamu belajar bahwa kasih Tuhan membebaskanmu dari beban masa lalu yang membuatmu tertunduk.",
+      "episode_closing": "\"Di dalam Yesus, kamu tidak lagi perlu berjalan dengan beban yang berat. Tegaklah!\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Perempuan yang Membungkuk"
+      ]
     },
     {
       "id": 22,
@@ -1500,8 +1584,12 @@
         "points": 5
       },
       "reward": "Integritas",
-"reward_message": "Kamu belajar untuk mengutamakan belas kasih di atas aturan manusia, sama seperti yang Yesus teladankan.",
-"episode_closing": "\"Melakukan kebaikan tidak pernah salah, apa pun waktunya.\""
+      "reward_message": "Kamu belajar untuk mengutamakan belas kasih di atas aturan manusia, sama seperti yang Yesus teladankan.",
+      "episode_closing": "\"Melakukan kebaikan tidak pernah salah, apa pun waktunya.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Orang Sakit Busung Air"
+      ]
     },
     {
       "id": 23,
@@ -1515,7 +1603,7 @@
       "image": "images/bartimeus.jpg",
       "category": "penyembuhan",
       "story_parts": [
-        "Yesus dan murid-murid-Nya keluar dari Yerikho menuju  Yerusalem.",
+        "Yesus dan murid-murid-Nya keluar dari Yerikho menuju Yerusalem.",
         "Bartimeus, pengemis yang buta, duduk di pinggir jalan. Mendengar Yesus lewat, ia berseru, 'Yesus, Anak Daud, kasihanilah aku!'",
         "Banyak orang menegurnya dan menyuruh diam. Tapi ia makin keras berseru.",
         "Yesus berhenti dan menyuruh memanggilnya. Bartimeus melempar jubahnya dan berdiri.",
@@ -1566,8 +1654,12 @@
         "points": 5
       },
       "reward": "Ketekunan",
-"reward_message": "Kamu belajar bahwa seruan iman yang sungguh-sungguh tidak akan pernah dilewati begitu saja oleh Yesus.",
-"episode_closing": "\"Iman yang terus berseru akan selalu menemukan jawaban di dalam Yesus.\""
+      "reward_message": "Kamu belajar bahwa seruan iman yang sungguh-sungguh tidak akan pernah dilewati begitu saja oleh Yesus.",
+      "episode_closing": "\"Iman yang terus berseru akan selalu menemukan jawaban di dalam Yesus.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Orang Buta Bartimeus"
+      ]
     },
     {
       "id": 24,
@@ -1622,7 +1714,8 @@
         ],
         "answer": "Kosong",
         "points_correct": 15,
-        "points_partial": 5
+        "points_partial": 5,
+        "insight": "Pelajari lebih lanjut tentang mukjizat ini."
       },
       "reflection": {
         "prompt": "Apa arti kebangkitan bagi hidupmu?",
@@ -1631,8 +1724,12 @@
         "points": 10
       },
       "reward": "Kemenangan",
-"reward_message": "Kamu telah mencapai puncak iman: percaya bahwa maut telah dikalahkan dan Yesus hidup selamanya di dalammu.",
-"episode_closing": "\"Sebab Ia hidup, ada hari esok yang cerah bagi kita semua.\""
+      "reward_message": "Kamu telah mencapai puncak iman: percaya bahwa maut telah dikalahkan dan Yesus hidup selamanya di dalammu.",
+      "episode_closing": "\"Sebab Ia hidup, ada hari esok yang cerah bagi kita semua.\"",
+      "points": 50,
+      "learning_objectives": [
+        "Memahami makna dari mukjizat: Kebangkitan Yesus"
+      ]
     }
   ],
   "glossary": [
@@ -1689,8 +1786,7 @@
       "definition": "Bangunan suci dan pusat ibadah utama orang Yahudi yang terletak di Yerusalem, dipandang sebagai tempat kediaman Allah di bumi."
     }
   ],
-
-"assessment_questions": [
+  "assessment_questions": [
     {
       "id": 1,
       "question": "Pada mukjizat pertama di Kana, apa pesan rohani utama dari tindakan Yesus mengubah air menjadi anggur?",
@@ -1747,5 +1843,4 @@
       "answer": "Tuhan yang berkuasa penuh atas alam semesta, penyakit, dan maut"
     }
   ]
-  
 }
