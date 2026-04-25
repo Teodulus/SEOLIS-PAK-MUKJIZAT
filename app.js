@@ -1,4 +1,3 @@
-
 // ─── STATE ────────────────────────────────────────────────────
 let appData = null;
 let user = {
@@ -532,6 +531,14 @@ function renderStory() {
     set("story-title", m.title);
     set("story-subtitle", m.subtitle);
     set("story-makna", m.makna_inti);
+
+    // Update header dengan judul mukjizat
+    const headerTitle = document.getElementById("story-header-title");
+    if (headerTitle) headerTitle.textContent = m.title || "SOMIRACLE";
+    const headerScene = document.getElementById("story-header-scene");
+    const totalScenes = (m.story_parts_variations?.[userPath] || m.story_parts || []).length;
+    if (headerScene) headerScene.textContent = `Adegan 1 / ${totalScenes || "?"}`;
+
 
     const ptag = document.getElementById("story-phase-tag");
     if (ptag) {
