@@ -772,8 +772,10 @@ body {
     <button onclick="showScreen('screen-journey')" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--surface2);color:var(--primary);border:none;cursor:pointer;">
       <span class="material-symbols-outlined" style="font-size:20px">close</span>
     </button>
-    <span class="font-sans font-bold text-base" style="color:var(--primary)">SOMIRACLE</span>
-    
+    <div style="text-align:center;flex:1;padding:0 8px;">
+      <span id="story-header-title" class="font-sans font-bold text-base" style="color:var(--primary);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;margin:0 auto;"></span>
+      <span id="story-header-scene" class="font-sans text-xs" style="color:var(--muted)"></span>
+    </div>
     <div style="width:36px"></div>
   </header>
 
@@ -1000,53 +1002,58 @@ body {
 <!-- ══════════════════════════════════════════
      REWARD
 ══════════════════════════════════════════ -->
-<div id="screen-reward" class="screen items-center justify-center px-5 py-8" style="background:var(--bg)">
-  <!-- Ubah onclick menjadi fungsi baru penentu arah -->
-    <button onclick="finishRewardScreen()" class="btn-primary fade-up d3">
-      Lanjutkan
-      <span class="material-symbols-outlined">arrow_forward</span>
-    </button>
-  <div class="w-full max-w-md flex flex-col gap-4">
-    <div class="reward-burst pop text-center">
-      <div style="font-size:64px;margin-bottom:8px;" id="reward-emoji">🏆</div>
-      <h1 class="font-sans text-2xl font-extrabold text-white mb-1">Luar Biasa!</h1>
-      <p id="reward-miracle-name" class="text-white/75 text-sm mb-4"></p>
-      <div id="reward-pts-display" class="font-sans text-4xl font-black text-white mb-1">+20</div>
-      <p class="text-white/60 text-xs font-sans">Poin diperoleh</p>
-    </div>
+<div id="screen-reward" class="screen" style="background:var(--bg);padding:0;">
 
-    <div class="card p-5 text-center fade-up d1">
-      <div style="width:60px;height:60px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;animation:pulseGold 2s infinite;">
-        <span class="material-symbols-outlined" style="font-size:28px;color:var(--accent);font-variation-settings:'FILL' 1">workspace_premium</span>
-      </div>
-      <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--muted)">Badge Diperoleh</p>
-      <h2 id="reward-badge" class="font-sans text-xl font-bold mb-1" style="color:var(--on-bg)"></h2>
-      <p id="reward-msg" class="text-sm" style="color:var(--muted)"></p>
-      <div class="progress-bar mt-3">
-        <div id="reward-total-fill" class="progress-fill" style="width:0%"></div>
-      </div>
-      <p id="reward-total-pts" class="font-sans text-xs mt-1 text-right" style="color:var(--muted)">Total: 0 poin</p>
-    </div>
+  <!-- Hero burst — full width, no rounding -->
+  <div class="reward-burst pop text-center" style="border-radius:0;padding:48px 24px 40px;position:relative;">
+    <div style="font-size:72px;margin-bottom:10px;" id="reward-emoji">🏆</div>
+    <h1 class="font-sans text-3xl font-extrabold text-white mb-1">Luar Biasa!</h1>
+    <p id="reward-miracle-name" class="text-white/75 text-base mb-5"></p>
+    <div id="reward-pts-display" class="font-sans text-5xl font-black text-white mb-1">+20</div>
+    <p class="text-white/60 text-sm font-sans">Poin diperoleh</p>
+  </div>
 
-    <div id="reward-levelup" style="display:none" class="card p-4 flex items-center gap-3 fade-up d2">
-      <div style="width:40px;height:40px;border-radius:50%;background:var(--success-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <span class="material-symbols-outlined" style="color:var(--success);font-size:18px;font-variation-settings:'FILL' 1">lock_open</span>
-      </div>
-      <div>
-        <p class="font-sans font-bold text-sm" style="color:var(--on-bg)">Babak Baru Terbuka!</p>
-        <p id="reward-levelup-text" class="font-sans text-xs" style="color:var(--muted)"></p>
-      </div>
-    </div>
+  <!-- Cards area — full width, container-main for desktop centering -->
+  <div class="flex-1 overflow-y-auto" style="padding:20px 0 32px;">
+    <div class="container-main flex flex-col gap-4">
 
-    <!-- Emotional feedback -->
-<div id="reward-emotion" class="card p-4 text-center fade-up d2" style="background:var(--primary-light)">
-      <p id="reward-emotion-text" class="font-sans font-semibold text-sm" style="color:var(--primary)"></p>
-    </div>
+      <!-- Badge card -->
+      <div class="card p-6 text-center fade-up d1">
+        <div style="width:68px;height:68px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;animation:pulseGold 2s infinite;">
+          <span class="material-symbols-outlined" style="font-size:32px;color:var(--accent);font-variation-settings:'FILL' 1">workspace_premium</span>
+        </div>
+        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--muted)">Badge Diperoleh</p>
+        <h2 id="reward-badge" class="font-sans text-2xl font-bold mb-2" style="color:var(--on-bg)"></h2>
+        <p id="reward-msg" class="text-sm leading-relaxed" style="color:var(--muted)"></p>
+        <div class="progress-bar mt-4">
+          <div id="reward-total-fill" class="progress-fill" style="width:0%"></div>
+        </div>
+        <p id="reward-total-pts" class="font-sans text-xs mt-2 text-right" style="color:var(--muted)">Total: 0 poin</p>
+      </div>
 
-    <button onclick="showScreen('screen-journey')" class="btn-primary fade-up d3">
-      Kembali ke Peta Perjalanan
-      <span class="material-symbols-outlined">map</span>
-    </button>
+      <!-- Level up -->
+      <div id="reward-levelup" style="display:none" class="card p-5 flex items-center gap-4 fade-up d2">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--success-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span class="material-symbols-outlined" style="color:var(--success);font-size:22px;font-variation-settings:'FILL' 1">lock_open</span>
+        </div>
+        <div>
+          <p class="font-sans font-bold text-sm" style="color:var(--on-bg)">Babak Baru Terbuka!</p>
+          <p id="reward-levelup-text" class="font-sans text-xs mt-0.5" style="color:var(--muted)"></p>
+        </div>
+      </div>
+
+      <!-- Emotional feedback -->
+      <div id="reward-emotion" class="card p-5 text-center fade-up d2" style="background:var(--primary-light)">
+        <p id="reward-emotion-text" class="font-sans font-semibold text-sm" style="color:var(--primary)"></p>
+      </div>
+
+      <!-- CTA button -->
+      <button onclick="showScreen('screen-journey')" class="btn-primary fade-up d3" style="font-size:1rem;padding:16px 24px;">
+        Kembali ke Peta Perjalanan
+        <span class="material-symbols-outlined">map</span>
+      </button>
+
+    </div>
   </div>
 </div>
 
